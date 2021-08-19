@@ -6,17 +6,15 @@
 
 <h1>Home</h1>
 
-<div class="slideshow">
-
-  <div>
-  <img src="https://images.unsplash.com/photo-1527251672045-a80241b3f574?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" height=300 alt="">
+<div class="carousel">
+{% for city in cities %}
+  <div class="carousel_images">
+    <img src="{{city.city_image}}" alt="cities at night">
   </div>
 
-  <div style="text-align:center">
-    <span class="dot" onclick="currentSlide(1)"></span>
-    <span class="dot" onclick="currentSlide(2)"></span>
-    <span class="dot" onclick="currentSlide(3)"></span>
-  </div>
+
+{% endfor %}
+
 
 </div>
 
