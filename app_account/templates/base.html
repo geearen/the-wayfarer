@@ -1,0 +1,41 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  {% comment %} link to main.css {% endcomment %}
+  <link rel="stylesheet" href="{% static "styles/main.css" %}" />
+
+  {% comment %} link to skeleton {% endcomment %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
+
+  {% comment %} link to main.js {% endcomment %}
+  <script src="{% static "scripts/main.js" %}" defer></script>
+
+  <title>Wayfarer - {% block title %}{% endblock %} </title>
+</head>
+<nav>
+  <div class="">
+    <div class="">
+      <img class="" src="" alt="Wayfarer logo" />
+      <p class="">Wayfarer</p>
+    </div>
+    <div class="">
+      <a class="" href="/login">Log In</a>
+    </div>
+    <div class="">
+      <a class="" href="/signup">Sign Up</a>
+    </div>
+    <div class="">
+      <a class="" href="/logout">Log Out</a>
+    </div>
+  </div>
+</nav>
+<body>
+  
+</body>
+</html>
