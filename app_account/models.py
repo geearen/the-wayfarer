@@ -11,5 +11,5 @@ class Profile(Model):
   profile_img = CharField(max_length=500, default="https://m.media-amazon.com/images/I/61lcM38-tfL._AC_UL1500_.jpg")
   current_city = CharField(max_length=50, default="NA")
 
-  def __str__(self) -> str:
-    return self.user
+  def __str__(self):
+    return self.user.username
