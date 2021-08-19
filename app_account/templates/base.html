@@ -36,7 +36,7 @@
       <p class="">Wayfarer</p>
     </div>
     <div class="">   
-      <a class="" href="/accounts/login">Log In</a>
+      <a class="" href="{% url 'login' %}">Log In</a>
       {% comment %} refactor once route is set up {% endcomment %}
     </div>
     <div class="">
@@ -49,6 +49,8 @@
   </div>
 </nav>
 <body>
-  {% block content %}{% endblock %}
+  <div>
+    {% block content %}{% endblock %}
+  </div>
 </body>
 </html>
