@@ -128,5 +128,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/accounts/signup/' """ fix later to say <int:pk> """
+LOGIN_REDIRECT_URL = '/accounts/signup/' 
+""" fix later to say <int:pk> """
 LOGOUT_REDIRECT_URL = '/accounts/login/'
