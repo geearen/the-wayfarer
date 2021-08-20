@@ -12,8 +12,61 @@
 
 body {
   font-family: 'josefin sans', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 nav {
   font-family: 'josefin sans', sans-serif;
+  background-color: var(--nav);
+  width: 100%;
+  height: 10vh;
+}
+
+.nav_container {
+  margin: 0;
+  padding: 8px;
+  display: grid;
+  grid-template-columns: repeat(10, .1fr);
+  grid-template-areas: '. . . . . . . login signup logout'
+}
+
+.nav_button_container {
+  display: flex;
+  width: 80px;
+  height: 30px;
+  justify-content: center;
+  align-content: center;
+  padding: 8px;
+  border-radius: 5px;
+  background-color: none;
+  transition-property: background-color;
+  transition-duration: .4s;
+}
+
+.nav_button_container:hover {
+  background-color: rgb(118, 200, 147, 0.2)
+}
+
+.nav_button {
+  color: var(--button);
+  text-decoration: none;
+  font-size: 20px;
+  align-self: center;
+}
+
+.nav_button:visited {
+  color: var(--button);
+}
+
+.button_login {
+  grid-area: login;
+}
+
+.button_signup {
+  grid-area: signup;
+}
+
+.button_logout {
+  grid-area: logout;
 }

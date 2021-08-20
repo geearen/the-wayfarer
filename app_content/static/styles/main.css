@@ -17,6 +17,7 @@ body {
 nav {
   font-family: 'josefin sans', sans-serif;
 }
+<<<<<<< HEAD
 
 .carousel_container {
   position: relative;
@@ -38,3 +39,5 @@ a.carousel_button_prev, a.carousel_button_next {
   transition: .5 ease;
   user-select: none;
 }
+=======
+>>>>>>> dev
