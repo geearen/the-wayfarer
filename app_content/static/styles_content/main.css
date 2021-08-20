@@ -107,7 +107,7 @@ nav {
 }
 
 .carousel_images{
-  display: none;
+  /* display: none; */
   grid-template-columns: 1fr;
 }
 
@@ -167,4 +167,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .content h3:hover {
   color: var(--button);
+}
+
+.content{
+  margin: 30px;
 }
