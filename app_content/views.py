@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from .models import City
-
+from app_account import views
 # Create your views here.
 
 class Home(TemplateView):
