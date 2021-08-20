@@ -180,6 +180,9 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   margin: 30px;
 }
 
-.city_button {
-  color: var(--text);
+.post_container {
+  margin: auto;
+  width: 500px;
+  height: 750px;
+  background-color: navajowhite;
 }
