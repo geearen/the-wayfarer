@@ -10,10 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
+# import os
 from pathlib import Path
 import environ
 env = environ.Env(
-    # set casting, default value
+    # # set casting, default value
     DEBUG=(bool, False)
 )
 # reading .env file
@@ -126,7 +127,15 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
+# STATIC_ROOT = os.path.join(BASE_DIR, 'app_account/static')
 STATIC_URL = '/static/'
+
+# STATICFILES_DIRS = [
+#     BASE_DIR / "static",
+#     '/var/www/static/',
+# ]
+
+# STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 
 LOGIN_REDIRECT_URL = '/' 
 """ fix later to say <int:pk> """
