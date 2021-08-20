@@ -13,6 +13,8 @@
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -176,4 +178,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .content{
   margin: 30px;
+}
+
+.city_button {
+  color: var(--text);
 }

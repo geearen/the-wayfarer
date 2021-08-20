@@ -1,0 +1,16 @@
+{% extends 'base_content.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+<aside>
+{% for city in cities %}
+<div class="city_container">
+  <button class="city_button">
+    <p>{{ city.city_name }}</p>
+  </button>
+</div>
+{% endfor %}
+</aside>
+
+{% endblock %}
