@@ -3,6 +3,8 @@ from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views import View
 from django.views.generic import DetailView
+from django.views.generic.edit import CreateView, UpdateView, DeleteView
+from django.urls import reverse
 
 
 from django.contrib.auth.forms import UserCreationForm
@@ -63,3 +65,24 @@ class Signup(View):
 class ProfileDetail(DetailView):
   model = Profile
   template_name = "profile_detail.html"
+
+# class UserUpdate(UpdateView):
+#   model =  User
+#   fields = [ 'username', 'email']
+#   template_name = "profile_update.html"
+
+#   def get_success_url(self):
+#     return reverse("profile_detail", kwargs={'pk': self.object.pk})
+
+class ProfileUpdate(UpdateView):
+  model = Profile, User
+  fields = ['profile_img', 'current_city', 'username']
+  template_name = "profile_update.html"
+
+  # def get_context_data(self, pk, **kwargs):
+  #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
+  #   context["second_model"] = User.objects.get(pk=pk)
+  #   return context
+
+  def get_success_url(self):
+    return reverse("profile_detail", kwargs={'pk': self.object.pk})
