@@ -2,6 +2,8 @@ from app_account.forms import SignUpForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views import View
+from django.views.generic import DetailView
+
 
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
@@ -57,3 +59,7 @@ class Signup(View):
     else:
       form = SignUpForm()
     return render(request, 'signup.html', {'form': form})
+
+class ProfileDetail(DetailView):
+  model = Profile
+  template_name = "profile_detail.html"
