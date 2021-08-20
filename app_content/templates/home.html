@@ -1,21 +1,57 @@
-{% extends 'base.html' %}
+{% extends 'base_content.html' %}
 
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
-<h1>Home</h1>
 
-<div class="carousel">
-{% for city in cities %}
-  <div class="carousel_images">
-    <img src="{{city.city_image}}" alt="cities at night">
+<main>
+<div class="home_container_carousel">
+  <div class="carousel_container">
+  {% comment %} {% for city in cities %}
+    <div class="carousel_images fade">
+      <img src="{{city.city_image}}" alt="cities at night">
+    </div>
+  {% endfor %}  {% endcomment %}
+  <div class="carousel_images fade">
+    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1527251672045-a80241b3f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1431102996501-f6379b157668?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
+    <img src="https://images.unsplash.com/photo-1602775112551-fa7515719bf6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
   </div>
 
+  {% comment %} <div class="carousel_images fade">
+    <img src="" alt="">
+  </div> {% endcomment %}
 
-{% endfor %}
-
+    <div class="carousel_button">
+      <a class="carousel_button_prev" onclick="altCarousel">&#10094;</a>
+      <a class="carousel_button_next" onclick="altCarousel">&#10095;</a>
+    </div> 
+  </div>
 
 </div>
+
+<div class="home_container_title">
+  <h1>Wayfarer is . . .</h1>
+</div>
+
+<div class="home_container_content">
+  <div class="content">
+    <h3>Lorem Ipsum Dolor</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
+  </div>
+    <div class="content">
+    <h3>Lorem Ipsum Dolor</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
+  </div>
+    <div class="content">
+    <h3>Lorem Ipsum Dolor</h3>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
+  </div>
+
+</div>
+
+</main>
 
 {% endblock %}
