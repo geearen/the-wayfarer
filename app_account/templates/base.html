@@ -30,20 +30,20 @@
   <title>Wayfarer - {% block title %}{% endblock %} </title>
 </head>
 <nav>
-  <div class="">
+  <div class="nav_container">
     <div class="">
       <img class="" src="" alt="Wayfarer logo" />
       <p class="">Wayfarer</p>
     </div>
-    <div class="">   
-      <a class="" href="{% url 'login' %}">Log In</a>
+    <div class="nav_button_container">   
+      <a class="nav-button" href="{% url 'login' %}">Log In</a>
       {% comment %} refactor once route is set up {% endcomment %}
     </div>
-    <div class="">
-      <a class="" href="{% url 'signup' %}">Sign Up</a>
+    <div class="nav_button_container">
+      <a class="nav-button" href="{% url 'signup' %}">Sign Up</a>
     </div>
-    <div class="">
-      <a class="" href="{% url 'logout' %}">Log Out</a>
+    <div class="nav_button_container">
+      <a class="nav-button" href="{% url 'logout' %}">Log Out</a>
       {% comment %} refactor once route is set up {% endcomment %}
     </div>
     <div class="">
