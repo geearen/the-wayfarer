@@ -32,7 +32,9 @@
 <nav>
   <div class="nav_container">
     <div class="nav_brand">
-      <img class="nav_logo" src="static/assets/Wayfarer_logo.png" height=50 alt="Wayfarer logo" />
+    <a class="nav_button" href="{% url 'home' %}">
+      <img class="nav_logo" src="/assets/Wayfarer_logo.png"  alt="Wayfarer logo" />
+    </a>
       <p class="nav_name">Wayfarer</p>
       <p class="nav_user">{{user.username}}</p>
     </div>
