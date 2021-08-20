@@ -13,20 +13,20 @@
       <img src="{{city.city_image}}" alt="cities at night">
     </div>
   {% endfor %}  {% endcomment %}
-  <div class="carousel_images fade">
+  {% comment %} <div class="carousel_images fade">
     <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
     <img src="https://images.unsplash.com/photo-1527251672045-a80241b3f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
     <img src="https://images.unsplash.com/photo-1431102996501-f6379b157668?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
     <img src="https://images.unsplash.com/photo-1602775112551-fa7515719bf6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-  </div>
-
-  {% comment %} <div class="carousel_images fade">
-    <img src="" alt="">
   </div> {% endcomment %}
 
+  <div class="carousel_images fade">
+    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
+  </div>
+
     <div class="carousel_button">
-      <a class="carousel_button_prev" onclick="altCarousel">&#10094;</a>
-      <a class="carousel_button_next" onclick="altCarousel">&#10095;</a>
+      <a id="carousel_button_left" class="carousel_button_prev">&#10094;</a>
+      <a id="carousel_button_right" class="carousel_button_next">&#10095;</a>
     </div> 
   </div>
 
@@ -51,7 +51,6 @@
   </div>
 
 </div>
-
 </main>
 
 {% endblock %}
