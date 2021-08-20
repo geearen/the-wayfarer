@@ -12,6 +12,7 @@
 
 body {
   font-family: 'josefin sans', sans-serif;
+  background-color: var(--background);
 }
 
 nav {
@@ -70,13 +71,19 @@ nav {
 }
 
 
+.home_container_carousel {
+  grid-template: 1fr;
+}
+
 .carousel_container {
+  max-width: 100%;
   position: relative;
   margin: auto;
 }
 
 .carousel_images{
   display: none;
+  grid-template-columns: 1fr;
 }
 
 a.carousel_button_prev, a.carousel_button_next {
@@ -84,9 +91,47 @@ a.carousel_button_prev, a.carousel_button_next {
   position: absolute;
   top: 50%;
   width: auto;
-  margin-top: -22;
   padding: 16px;
   color: var(--text);
   transition: .5 ease;
   user-select: none;
+}
+
+a.carousel_button_next {
+  right: 0;
+}
+
+a.carousel_button_prev:hover, a.carousel_button_next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.home_container_title h1 {
+  color: var(--text);
+  font-weight: 700;
+  margin: auto;
+  padding: 50px;
+  text-align: center;
+  }
+  
+
+.home_container_content {
+  display: flex;
+  color: var(--text);
+  margin: auto;
+  padding: 0px 30px;
+  justify-content: space-between;
+}
+
+.content h3 {
+  color: var(--secondary-text);
+  font-weight: 500;
+  font-size: 1em;
+  text-transform: uppercase;
 }
