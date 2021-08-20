@@ -13,6 +13,8 @@
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: var(--background);
+  margin: 0;
+  padding: 0;
 }
 
 nav {
@@ -76,6 +78,7 @@ nav {
 
 .nav_logo {
   display: flex;
+  align-items: center;
   height: 75px;
   width: 75px;
 }

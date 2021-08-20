@@ -12,6 +12,7 @@
 
 body {
   font-family: 'Urbanist', sans-serif;
+  background-color: var(--background);
   margin: 0;
   padding: 0;
 }
@@ -26,14 +27,15 @@ nav {
 
 .nav_container {
   width: 95%;
+  height: 10vh;
   margin: 0;
-  padding: 8px;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
   grid-template-areas: 'brand . . . . . login signup logout';
   row-gap: 10px;
-  align-content: center;
+  align-items: center;
 }
 
 
@@ -59,7 +61,7 @@ nav {
   color: var(--button);
   text-decoration: none;
   font-size: 20px;
-  align-self: center;
+  align-items: center;
 }
 
 .nav_button:visited {
@@ -77,6 +79,7 @@ nav {
 
 .nav_logo {
   display: flex;
+  align-items: center;
   height: 75px;
   width: 75px;
 }
