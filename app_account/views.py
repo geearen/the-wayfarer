@@ -39,7 +39,7 @@ class Signup(View):
     }
     return render(request, "signup.html", context)
   
-  def post(request):
+  def post(self,request):
     if request.method == 'POST':
       form = SignUpForm(request.POST)
       if form.is_valid():
@@ -48,6 +48,7 @@ class Signup(View):
         # If you don’t call user.refresh_from_db(), when you try to access the user.profile, it will return None.
         user.refresh_from_db()
         user.profile.current_city = form.cleaned_data.get('current_city')
+        user.profile.profile_img = form.cleaned_data.get('profile_img')
         user.save()
         raw_password = form.cleaned_data.get('password1')
         user = authenticate(username=user.username, password=raw_password)
