@@ -107,7 +107,7 @@ nav {
 }
 
 .carousel_images{
-  display: none;
+  /* display: none; */
   grid-template-columns: 1fr;
 }
 
