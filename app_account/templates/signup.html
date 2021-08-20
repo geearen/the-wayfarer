@@ -4,10 +4,10 @@
 
 {% block content %}
 <h1>Signup</h1>
-  <form method="post" action="{% url 'signup' %}">
+  <form method="POST" action="{% url 'signup' %}">
     {% csrf_token %}
     {{ form.as_p }}
     <input type="submit" value="signup" />
-    <input type="hidden" name="next" value="{{ next }}" />
+    {% comment %} <input type="hidden" name="next" value="{{ next }}" /> {% endcomment %}
   </form>
 {% endblock %}
