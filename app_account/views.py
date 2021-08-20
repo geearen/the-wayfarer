@@ -75,9 +75,10 @@ class ProfileDetail(DetailView):
 #     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
 class ProfileUpdate(UpdateView):
-  model = Profile , User
-  fields = ['profile_img', 'current_city', 'username']
+  model = User 
+  fields = ['username', 'email']
   template_name = "profile_update.html"
+  
 
   # def get_context_data(self, pk, **kwargs):
   #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
