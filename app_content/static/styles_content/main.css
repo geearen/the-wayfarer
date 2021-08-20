@@ -9,7 +9,7 @@
   --cobalt: #0047A9;
   --sienna: #4E191C;
 }
-
+/* Home page -- CSS */
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: var(--background);
@@ -104,7 +104,7 @@ nav {
 }
 
 
-
+/* Carousel CSS */
 .home_container_carousel {
   grid-template: 1fr;
 }
