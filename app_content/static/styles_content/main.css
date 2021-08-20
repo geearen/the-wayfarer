@@ -12,8 +12,6 @@
 
 body {
   font-family: 'josefin sans', sans-serif;
-  margin: 0;
-  padding: 0;
 }
 
 nav {
@@ -72,4 +70,23 @@ nav {
 }
 
 
+.carousel_container {
+  position: relative;
+  margin: auto;
+}
 
+.carousel_images{
+  display: none;
+}
+
+a.carousel_button_prev, a.carousel_button_next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22;
+  padding: 16px;
+  color: var(--text);
+  transition: .5 ease;
+  user-select: none;
+}

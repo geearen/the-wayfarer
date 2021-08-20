@@ -19,33 +19,36 @@
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
   {% comment %} main.css {% endcomment %}
-  <link rel="stylesheet" href="{% static "styles/main.css" %}" />
+  <link rel="stylesheet" href="{% static 'styles_content/main.css' %}" />
 
   {% comment %} jQuery {% endcomment %}
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   {% comment %} main.js {% endcomment %}
-  <script src="{% static "scripts/main.js" %}" defer></script>
-
+  <script src="{% static "scripts_content/main.js" %}" defer></script>
   <title>Wayfarer - {% block title %}{% endblock %} </title>
 </head>
 <nav>
-  <div class="">
+  <div class="nav_container">
     <div class="">
       <img class="" src="" alt="Wayfarer logo" />
       <p class="">Wayfarer</p>
     </div>
-    <div class="">   
-      <a class="" href="/accounts/login">Log In</a>
+    <div class="nav_button_container button_login">   
+      <a class="nav_button" href="{% url 'login' %}">Log In</a>
+      {% comment %} refactor once route is set up {% endcomment %}
+    </div>
+    <div class="nav_button_container button_signup">
+      <a class="nav_button" href="{% url 'signup' %}">Sign Up</a>
+    </div>
+    <div class="nav_button_container button_logout">
+      <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
       {% comment %} refactor once route is set up {% endcomment %}
     </div>
     <div class="">
-      <a class="" href="{% url 'signup' %}">Sign Up</a>
+      {{user.username}}
     </div>
-    <div class="">
-      <a class="" href="/accounts/logout">Log Out</a>
-      {% comment %} refactor once route is set up {% endcomment %}
-    </div>
+
   </div>
 </nav>
 <body>
