@@ -43,59 +43,15 @@
       <a class="nav_button" href="{% url 'login' %}">Log In</a>
     </div>
       
-      <div class="modal modal-open">
-        <div class="modal-inner">
-          <div class="modal-content">
-            <div class="modal-close-icon">
-              <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <div class="modal-content-inner">
-              <h4> Log In </h4>
-              {% if form.errors %}
-              <p>Your username and password didn't match. Please try again.</p>
-              {% endif %}
-
-              {% if next %}
-                {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-                {% else %}
-                <p>Please login to see this page.</p>
-                {% endif %}
-              {% endif %}
-            </div>
-            <hr class="modal-buttons-seperator">
-          <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <table>
-            <tr>
-              <td>{{ form.username.label_tag }}</td>
-              <td>{{ form.username }}</td>
-            </tr>
-            <tr>
-              <td>{{ form.password.label_tag }}</td>
-              <td>{{ form.password }}</td>
-            </tr>
-            </table>
-            <div class="modal-buttons">
-              <input type="submit" value="login">
-              <input type="hidden" name="next" value="{{ next }}">
-            </div>
-            </div>
-          </form>
-          </div>
-        </div>
-      </div>
-      {% comment %} refactor once route is set up {% endcomment %}
-
     <div class="nav_button_container button_signup">
       <a class="nav_button" href="{% url 'signup' %}">Sign Up</a>
     </div>
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
     </div>
-  </div>
+    
 </nav>
+
 <body>
   <div>
     {% block content %}{% endblock %}
