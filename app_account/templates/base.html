@@ -31,9 +31,12 @@
 </head>
 <nav>
   <div class="nav_container">
-    <div class="">
-      <img class="" src="" alt="Wayfarer logo" />
-      <p class="">Wayfarer</p>
+    <div class="nav_brand">
+      <img class="nav_logo" src="" alt="Wayfarer logo" />
+      <p class="nav_name">Wayfarer</p>
+    </div>
+    <div class="nav_user">
+      {{user.username}}
     </div>
     <div class="nav_button_container button_login">   
       <a class="nav_button" href="{% url 'login' %}">Log In</a>
@@ -45,9 +48,6 @@
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
       {% comment %} refactor once route is set up {% endcomment %}
-    </div>
-    <div class="">
-      {{user.username}}
     </div>
 
   </div>
