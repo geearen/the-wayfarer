@@ -34,22 +34,17 @@
     <div class="nav_brand">
       <img class="nav_logo" src="static/assets/Wayfarer_logo.png" height=50 alt="Wayfarer logo" />
       <p class="nav_name">Wayfarer</p>
-    </div>
-    <div class="nav_user">
-      {{user.username}}
+      <p class="nav_user">{{user.username}}</p>
     </div>
     <div class="nav_button_container button_login">   
       <a class="nav_button" href="{% url 'login' %}">Log In</a>
-      {% comment %} refactor once route is set up {% endcomment %}
     </div>
     <div class="nav_button_container button_signup">
       <a class="nav_button" href="{% url 'signup' %}">Sign Up</a>
     </div>
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
-      {% comment %} refactor once route is set up {% endcomment %}
     </div>
-
   </div>
 </nav>
 <body>
