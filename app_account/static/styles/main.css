@@ -25,13 +25,14 @@ nav {
 }
 
 .nav_container {
+  width: 95%;
   margin: 0;
   padding: 8px;
   display: grid;
-  grid-template-columns: repeat(10, 10vw);
+  grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . login signup logout . ';
-  gap: 10px;
+  grid-template-areas: 'brand . . . . . login signup logout';
+  row-gap: 10px;
   align-content: center;
 }
 
@@ -43,7 +44,7 @@ nav {
   justify-content: center;
   align-content: center;
   align-self: center;
-  padding: 8px;
+  padding: 5px;
   border-radius: 5px;
   background-color: none;
   transition-property: background-color;
