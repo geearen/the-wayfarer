@@ -75,11 +75,18 @@ nav {
 }
 
 .nav_logo {
-  
+  display: flex;
+  height: 75px;
+  width: 75px;
 }
 
 .nav_name {
-
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  font-weight: 800;
+  font-size: 2em;
+  color: var(--text);
 }
 
 .button_login {
@@ -106,9 +113,8 @@ nav {
   margin: auto;
 }
 
-.carousel_images{
-  /* display: none; */
-  grid-template-columns: 1fr;
+.carousel_images, img{
+  width: 100%;
 }
 
 a.carousel_button_prev, a.carousel_button_next {
@@ -158,15 +164,14 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .content h3 {
   cursor: default;
-  color: var(--secondary-text);
+  color: var(--button);
   font-weight: 600;
   font-size: 1.5em;
   kerning: .5em;
-  /* text-transform: uppercase; */
 }
 
 .content h3:hover {
-  color: var(--button);
+  color: var(--text);
 }
 
 .content{

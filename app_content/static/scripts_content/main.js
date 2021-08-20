@@ -18,7 +18,6 @@ const carouselImages = [
 ];
 
 
-
 let idx = 0;
 
 $('#carousel_button_right').click(function(arr) {
