@@ -1,19 +1,18 @@
 :root {
-  --nav: #021F4A;
-  --background: #010A18;
-  --hightlight: #002C91;
-  --error: #C41F31;
+  --nav: #021f4a;
+  --background: #010a18;
+  --hightlight: #002c91;
+  --error: #c41f31;
   --button: #76c893;
   --text: whitesmoke;
-  --secondary-text: #82A09D;
-  --cobalt: #0047A9;
-  --sienna: #4E191C;
+  --secondary-text: #82a09d;
+  --cobalt: #0047a9;
+  --sienna: #4e191c;
 }
-
+/* Home Page -- CSS */
 body {
   font-family: 'Urbanist', sans-serif;
-  margin: 0;
-  padding: 0;
+  background-color: var(--background);
 }
 
 nav {
@@ -102,5 +101,148 @@ nav {
   grid-area: logout;
 }
 
+/* MODAL for LOGIN */
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.65);
+  visibility: hidden;
+  backface-visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.15s ease-in-out;
+}
+.modal.modal-open {
+  visibility: visible;
+  backface-visibility: visible;
+  opacity: 1;
+  z-index: 1;
+}
+.modal .modal-inner {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.modal .modal-inner .modal-content {
+  background-color: white;
+  max-width: 35em;
+  padding: 1em 1.5em;
+  position: relative;
+  margin: 2em;
+  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+}
+.modal .modal-inner .modal-content .modal-close-icon {
+  position: absolute;
+  right: 1.5em;
+}
+.modal .modal-inner .modal-content .modal-content-inner {
+  padding-right: 2em;
+}
+.modal .modal-inner .modal-content .modal-content-inner h1,
+.modal .modal-inner .modal-content .modal-content-inner h2,
+.modal .modal-inner .modal-content .modal-content-inner h3,
+.modal .modal-inner .modal-content .modal-content-inner h4,
+.modal .modal-inner .modal-content .modal-content-inner h5,
+.modal .modal-inner .modal-content .modal-content-inner h6 {
+  margin-bottom: 0.25em;
+}
+.modal .modal-inner .modal-content .modal-content-inner p {
+  margin-bottom: 1em;
+}
+.modal .modal-inner .modal-content .modal-buttons-seperator {
+  margin: 1.5em 0;
+  margin-top: 0;
+}
+.modal .modal-inner .modal-content .modal-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal .modal-inner .modal-content .modal-buttons button {
+  margin-left: 1em;
+}
+.modal .modal-inner .modal-content .modal-buttons button:first-child {
+  margin-left: 0;
+}
 
+/* Carousel CSS */
+.home_container_carousel {
+  grid-template: 1fr;
+}
 
+.carousel_container {
+  max-width: 100%;
+  position: relative;
+  margin: auto;
+}
+
+.carousel_images, img{
+  width: 100%;
+}
+
+a.carousel_button_prev, a.carousel_button_next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  color: var(--text);
+  transition: .5 ease;
+  user-select: none;
+}
+
+a.carousel_button_next {
+  right: 0;
+}
+
+a.carousel_button_prev:hover, a.carousel_button_next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+.home_container_title h1 {
+  cursor: default;
+  color: var(--text);
+  font-weight: 700;
+  margin: auto;
+  padding: 50px;
+  text-align: center;
+  }
+  
+
+.home_container_content {
+  cursor: default;
+  display: flex;
+  color: var(--text);
+  margin: auto;
+  padding: 0px 30px;
+  justify-content: space-between;
+}
+
+.content h3 {
+  cursor: default;
+  color: var(--button);
+  font-weight: 600;
+  font-size: 1.5em;
+  kerning: .5em;
+}
+
+.content h3:hover {
+  color: var(--text);
+}
+
+.content{
+  margin: 30px;
+}
