@@ -76,11 +76,18 @@ nav {
 }
 
 .nav_logo {
-  
+  display: flex;
+  height: 75px;
+  width: 75px;
 }
 
 .nav_name {
-
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  font-weight: 800;
+  font-size: 2em;
+  color: var(--text);
 }
 
 .button_login {
