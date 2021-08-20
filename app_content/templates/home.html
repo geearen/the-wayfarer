@@ -6,15 +6,17 @@
 
 <h1>Home</h1>
 
-<div class="carousel">
+<div class="carousel_container">
 {% for city in cities %}
   <div class="carousel_images">
     <img src="{{city.city_image}}" alt="cities at night">
   </div>
-
-
 {% endfor %}
 
+  <div class="carousel_button">
+    <a class="carousel_button_prev" onclick="alternate">&#10094;</a>
+    <a class="carousel_button_next" onclick="alternate">&#10095;</a>
+  </div>
 
 </div>
 
