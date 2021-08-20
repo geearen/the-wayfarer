@@ -63,3 +63,4 @@ class Signup(View):
 class ProfileDetail(DetailView):
   model = Profile
   template_name = "profile_detail.html"
+

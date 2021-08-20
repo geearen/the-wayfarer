@@ -12,3 +12,6 @@ class Home(TemplateView):
     context = super().get_context_data(**kwargs)
     context["cities"] = City.objects.all()
     return context
+
+class PostShow(TemplateView):
+  template_name="post_show.html"
