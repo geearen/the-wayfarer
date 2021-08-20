@@ -7,10 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  {% comment %} Josefin Sans {% endcomment %}
+  {% comment %} Urbanist {% endcomment %}
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
   {% comment %} skeleton {% endcomment %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
@@ -26,13 +26,17 @@
 
   {% comment %} main.js {% endcomment %}
   <script src="{% static "scripts_content/main.js" %}" defer></script>
+
   <title>Wayfarer - {% block title %}{% endblock %} </title>
 </head>
 <nav>
   <div class="nav_container">
-    <div class="">
-      <img class="" src="" alt="Wayfarer logo" />
-      <p class="">Wayfarer</p>
+    <div class="nav_brand">
+      <img class="nav_logo" src="static/assets/Wayfarer_logo.png"  height=50 alt="Wayfarer logo" />
+      <p class="nav_name">Wayfarer</p>
+    </div>
+    <div class="nav_user">
+      {{user.username}}
     </div>
     <div class="nav_button_container button_login">   
       <a class="nav_button" href="{% url 'login' %}">Log In</a>
@@ -44,9 +48,6 @@
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
       {% comment %} refactor once route is set up {% endcomment %}
-    </div>
-    <div class="">
-      {{user.username}}
     </div>
 
   </div>
