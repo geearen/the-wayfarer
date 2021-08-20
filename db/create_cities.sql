@@ -25,5 +25,3 @@ INSERT INTO app_content_post(title, tips, post_date, city_id, profile_id)
 INSERT INTO app_content_post(title, tips, post_date, city_id, profile_id)
   VALUES
     ('Seattle, Gotta Love the Rain','Seattle is one of the most gorgeous places I have seen in awhile, just wish it would rain a little less.', '2021-05-07 18:57:42.517205-07', 4, 1);
-
-

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+<h1>Home</h1>
+
+<div class="carousel">
+{% for city in cities %}
+  <div class="carousel_images">
+    <img src="{{city.city_image}}" alt="cities at night">
+  </div>
+
+
+{% endfor %}
+
+
+</div>
+
+{% endblock %}
