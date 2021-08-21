@@ -36,20 +36,23 @@
       <img class="nav_logo" src="/static/assets/Wayfarer_logo.png"  alt="Wayfarer logo" />
     </a>
       <p class="nav_name">Wayfarer</p>
-      <p class="nav_user">{{user.username}}</p>
     </div>
 
-    <div class="nav_button_container button_login">   
-      <a class="nav_button" href="{% url 'login' %}">Log In</a>
-    </div>
-
-    <div class="nav_button_container button_signup">
-      <a class="nav_button" href="{% url 'signup' %}">Sign Up</a>
+    {% if user.is_authenticated %}
+    <div class="nav_button_container button_user">
+      <a href="{% url 'profile_detail' user.pk%}" class="nav_button">{{user.username}}</a>
     </div>
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
     </div>
-    
+    {% else%}
+    <div class="nav_button_container button_login">   
+      <a class="nav_button open-modal" href="{% url 'login' %}">Log In</a>
+    </div>
+    <div class="nav_button_container button_signup">
+      <a class="nav_button open-modal" href="{% url 'signup' %}">Sign Up</a>
+    </div>
+    {% endif %}
 </nav>
 
 <body>
