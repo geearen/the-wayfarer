@@ -1,31 +1,50 @@
-{% extends 'base.html' %}
+{% include 'home.html' %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
 
-<div class="container">
+      <div class="modal modal-open">
+        <div class="modal-inner">
+          <div class="modal-content">
+            <div class="modal-close-icon">
+              <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
+            </div>
+            <div class="modal-content-inner">
+              <h4> Sign Up </h4>
+              {% if form.errors %}
+              <p style="color: red">{{ field.error }}</p>
+              {% endif %}
 
-  <h2>Sign up</h2>
+              {% if next %}
+                {% if user.is_authenticated %}
+                <p>Your account doesn't have access to this page. To proceed,
+                please login with an account that has access.</p>
+                {% else %}
+                <p>Please login to see this page.</p>
+                {% endif %}
+              {% endif %}
+            </div>
+            <hr class="modal-buttons-seperator">
+          <form method="post">
+            {% csrf_token %}
+              <p class= "container_form">
+            {% for field in form %}
+                {{ field.label_tag }}
+                {{ field }}
+                {% if field.help_text %}
+                  <small style="color: grey">{{ field.help_text }}</small>
+                {% endif %}
+                {% for error in field.errors %}
+                  <p style="color: #c41f31">{{ error }}</p>
+                {% endfor %}
+            {% endfor %}
+            <button type="submit">Sign up</button>
+              </p>
+          </form>
+          </div>
+        </div>
+      </div>
+      {% comment %} refactor once route is set up {% endcomment %}
 
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p class= "container_form">
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-
-
-
-</div>
 {% endblock %}

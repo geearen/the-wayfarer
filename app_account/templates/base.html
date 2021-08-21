@@ -16,7 +16,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css" />
 
   {% comment %} font awesome {% endcomment %}
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 
   {% comment %} main.css {% endcomment %}
   <link rel="stylesheet" href="{% static "styles/main.css" %}" />
@@ -49,8 +49,9 @@
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
     </div>
-  </div>
+    
 </nav>
+
 <body>
   <div>
     {% block content %}{% endblock %}
