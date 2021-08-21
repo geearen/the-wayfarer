@@ -5,6 +5,7 @@ from .models import City, Post, Profile, User
 from app_account import views
 # Create your views here.
 
+
 class Home(TemplateView):
   model = City
   template_name="home.html"
@@ -14,9 +15,9 @@ class Home(TemplateView):
     context["cities"] = City.objects.all()
     return context
 
-class PostShow(DetailView):
+class PostDetail(DetailView):
   model = Post
-  template_name="post_show.html"
+  template_name="post_detail.html"
 
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
