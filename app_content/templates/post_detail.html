@@ -12,22 +12,20 @@
 </div>
 </aside>
 {% endfor %} {% endcomment %}
-<div class="post_container">
-  {% for post in posts %}
+<div class="post_detail_container">
+  
   <p>{{post.title}}</p>
 
-  {% endfor %}
 
-  {% for profile in profiles %}
+
+  
   <p>{{profile.current_city}}</p>
 
-  {% endfor %}
 
 
-  {% for user in users %}
   <p>{{user.username}}</p>
 
-  {% endfor %}
+
 
 </div>
 
