@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block title %}Posts{% endblock %}
+
+{% block content %}
+{% comment %} <aside>
+{% for city in cities %}
+<div class="city_container">
+  <button class="city_button">
+    <p>{{ city.city_name }}</p>
+  </button>
+</div>
+</aside>
+{% endfor %} {% endcomment %}
+<div class="post_container">
+  {% for post in posts %}
+  <p>{{post.title}}</p>
+
+  {% endfor %}
+
+  {% for profile in profiles %}
+  <p>{{profile.current_city}}</p>
+
+  {% endfor %}
+
+
+  {% for user in users %}
+  <p>{{user.username}}</p>
+
+  {% endfor %}
+
+</div>
+
+{% endblock %}
