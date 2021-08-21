@@ -31,7 +31,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . login signup logout';
+  grid-template-areas: 'brand . . . . . user login signup logout';
   row-gap: 10px;
   align-items: center;
 }
@@ -101,6 +101,10 @@ nav {
 
 .button_logout {
   grid-area: logout;
+}
+
+.button_user {
+  grid-area: user;
 }
 
 /* MODAL for LOGIN and Sign up */
