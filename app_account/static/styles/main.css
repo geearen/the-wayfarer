@@ -275,7 +275,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   height: 400px;
   border-radius: 15%;
   border: 2px solid var(--cobalt);
-  
+  box-shadow: 5px 5px 5px 1px var(--cobalt);
 }
 
 .user_name {
@@ -290,11 +290,19 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   background-color: var(--button)
 }
 
+
+
+.profile_post_container {
+  height: 90vh;
+  width: 30vw;
+}
+
 .profile_post {
   display: flex;
   justify-content: flex-start;
   flex-direction: column;
   padding: 10px;
+  color: var(--button)
 }
 
 .post {
