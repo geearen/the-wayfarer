@@ -254,7 +254,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   height: 500px;
   width: 650px;
   margin-top: 50px;
-  background-color: var(--nav);
+  background: radial-gradient(circle, #002c91, #021f4a);
   border: 1px solid var(--secondary-text);
   border-radius: 2px;
   box-shadow: 5px 5px 5px 1px rgba(0, 255, 0, 0.2);
