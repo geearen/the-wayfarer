@@ -139,4 +139,4 @@ STATIC_URL = '/static/'
 
 LOGIN_REDIRECT_URL = '/' 
 """ fix later to say <int:pk> """
-LOGOUT_REDIRECT_URL = '/accounts/login/'
+LOGOUT_REDIRECT_URL = '/'
