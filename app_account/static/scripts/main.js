@@ -41,7 +41,6 @@ $('#carousel_button_left').click(function(arr) {
 });
 
 const altCarousel = function altCarousel() {
-  console.log('we runnin');
   arr = carouselImages;
   idx++;
   if (idx >= arr.length) {

@@ -89,8 +89,8 @@ class ProfileUpdate(UpdateView):
   def get_success_url(self):
     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
-class MyLoginView():
+class MyLogin(LoginView):
 
   def get_success_url(self):
     url = self.get_redirect_url()
-    return reverse('', kwargs={'pk': self.request.user.pk, 'name': self.request.user.username})
+    return url or reverse('profile_detail', kwargs={'pk': self.request.user.pk})
