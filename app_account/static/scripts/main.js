@@ -59,7 +59,7 @@ setInterval(altCarousel, 4000);
 const modal = document.querySelector('.modal');
 const closeButtons = document.querySelectorAll('.close-modal');
 
-document.querySelector('.open-modal').addEventListener('click', function(){
+document.querySelector('.modal-open').addEventListener('click', function(){
   modal.classList.toggle('modal-open');
 });
 
