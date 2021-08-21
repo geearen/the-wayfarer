@@ -1,10 +1,21 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>{{profile.user}}</h1>
-  <img src="{{profile.profile_img}}" alt="">
-  <h3>{{profile.current_city}}</h3>
+  <h1 class="user_name">{{profile.user}}</h1>
+  <div class="profile_post">
+    <p class="post">Title</p>
+    <p class="post">Title</p>
+    <p class="post">Title</p>
+    <p class="post">Title</p>
+  </div>
+  <div class="pic_container">
+    <img class='profile_pic' src="{{profile.profile_img}}" alt="">
+  </div>
+  <div class="button_city_container">
+  <h3 class="current_city">{{profile.current_city}}</h3>
   <a href="{% url 'profile_update' profile.user.pk %}">
-    Update Profile
+    <button class="update_button">Update Profile</button>
+
+  </div>
   </a>
 
 {% endblock %}
