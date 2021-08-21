@@ -80,6 +80,7 @@ class ProfileUpdate(UpdateView):
   fields = ['username', 'email']
   template_name = "profile_update.html"
   
+  
 
   # def get_context_data(self, pk, **kwargs):
   #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
