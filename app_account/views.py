@@ -10,6 +10,7 @@ from django.urls import reverse
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
 from django.utils.decorators import method_decorator
 from .models import User, Profile
 
@@ -87,3 +88,8 @@ class ProfileUpdate(UpdateView):
 
   def get_success_url(self):
     return reverse("profile_detail", kwargs={'pk': self.object.pk})
+
+class LoginRedirect(View):
+  
+  def get(self, request):
+    return redirect(f"/accounts/profile/{request.user.profile.pk}")

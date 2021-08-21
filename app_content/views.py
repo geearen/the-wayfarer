@@ -5,6 +5,7 @@ from .models import City, Post, Profile, User
 from app_account import views
 # Create your views here.
 
+
 class Home(TemplateView):
   model = City
   template_name="home.html"
