@@ -1,106 +1,15 @@
-{% extends 'base.html' %}
+
+{% include "home.html" %}
 
 {% block title %}Login{% endblock %}
 
 {% block content %}
 
-<main>
-<div class="home_container_carousel">
-  <div class="carousel_container">
-  {% comment %} {% for city in cities %}
-    <div class="carousel_images fade">
-      <img src="{{city.city_image}}" alt="cities at night">
-    </div>
-  {% endfor %}  {% endcomment %}
-  {% comment %} <div class="carousel_images fade">
-    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1527251672045-a80241b3f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1431102996501-f6379b157668?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1602775112551-fa7515719bf6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-  </div> {% endcomment %}
-
-  <div class="carousel_images fade">
-    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-  </div>
-
-    <div class="carousel_button">
-      <a id="carousel_button_left" class="carousel_button_prev">&#10094;</a>
-      <a id="carousel_button_right" class="carousel_button_next">&#10095;</a>
-    </div> 
-  </div>
-
-</div>
-
-<div class="home_container_title">
-  <h1>Wayfarer is . . .</h1>
-</div>
-
-<div class="home_container_content">
-  <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-    <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-    <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-
-</div>
-
       <div class="modal modal-open">
         <div class="modal-inner">
           <div class="modal-content">
             <div class="modal-close-icon">
-              <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
-            </div>
-            <div class="modal-content-inner">
-              <h4> Log In </h4>
-              {% if form.errors %}
-              <p>Your username and password didn't match. Please try again.</p>
-              {% endif %}
-
-              {% if next %}
-                {% if user.is_authenticated %}
-                <p>Your account doesn't have access to this page. To proceed,
-                please login with an account that has access.</p>
-                {% else %}
-                <p>Please login to see this page.</p>
-                {% endif %}
-              {% endif %}
-            </div>
-            <hr class="modal-buttons-seperator">
-          <form method="post" action="{% url 'login' %}">
-            {% csrf_token %}
-            <table>
-            <tr>
-              <td>{{ form.username.label_tag }}</td>
-              <td>{{ form.username }}</td>
-            </tr>
-            <tr>
-              <td>{{ form.password.label_tag }}</td>
-              <td>{{ form.password }}</td>
-            </tr>
-            </table>
-            <div class="modal-buttons">
-              <input type="submit" value="login">
-              <input type="hidden" name="next" value="{{ next }}">
-            </div>
-            </div>
-          </form>
-          </div>
-        </div>
-      </div>
-</main>
-
-      <div class="modal modal-open">
-        <div class="modal-inner">
-          <div class="modal-content">
-            <div class="modal-close-icon">
-              <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
+              <a href="javascript:void(0)" class="close-modal"><i class ="fa fa-times" aria-hidden="true"></i></a>
             </div>
             <div class="modal-content-inner">
               <h4> Log In </h4>

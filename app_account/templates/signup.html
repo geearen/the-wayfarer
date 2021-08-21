@@ -1,56 +1,8 @@
-{% extends 'base.html' %}
+{% include 'home.html' %}
 
 {% block title %}Sign Up{% endblock %}
 
 {% block content %}
-
-<main>
-<div class="home_container_carousel">
-  <div class="carousel_container">
-  {% comment %} {% for city in cities %}
-    <div class="carousel_images fade">
-      <img src="{{city.city_image}}" alt="cities at night">
-    </div>
-  {% endfor %}  {% endcomment %}
-  {% comment %} <div class="carousel_images fade">
-    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1527251672045-a80241b3f574?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1431102996501-f6379b157668?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-    <img src="https://images.unsplash.com/photo-1602775112551-fa7515719bf6?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80" alt="">
-  </div> {% endcomment %}
-
-  <div class="carousel_images fade">
-    <img src="https://images.unsplash.com/photo-1523590564318-491748f70ea7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=750&q=80" alt="">
-  </div>
-
-    <div class="carousel_button">
-      <a id="carousel_button_left" class="carousel_button_prev">&#10094;</a>
-      <a id="carousel_button_right" class="carousel_button_next">&#10095;</a>
-    </div> 
-  </div>
-
-</div>
-
-<div class="home_container_title">
-  <h1>Wayfarer is . . .</h1>
-</div>
-
-<div class="home_container_content">
-  <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-    <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-    <div class="content">
-    <h3>Lorem Ipsum Dolor</h3>
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus, sapiente delectus ex nobis sunt totam suscipit harum fuga laudantium eligendi error doloribus expedita optio adipisci impedit sit maiores recusandae hic?</p>
-  </div>
-
-</div>
-</main>
 
       <div class="modal modal-open">
         <div class="modal-inner">
@@ -59,9 +11,9 @@
               <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
             </div>
             <div class="modal-content-inner">
-              <h4> Log In </h4>
+              <h4> Sign Up </h4>
               {% if form.errors %}
-              <p>Your username and password didn't match. Please try again.</p>
+              <p style="color: red">{{ field.error }}</p>
               {% endif %}
 
               {% if next %}
@@ -76,46 +28,23 @@
             <hr class="modal-buttons-seperator">
           <form method="post">
             {% csrf_token %}
-            {% for field in form %}
               <p class= "container_form">
-                {{ field.label_tag }}<br>
+            {% for field in form %}
+                {{ field.label_tag }}
                 {{ field }}
                 {% if field.help_text %}
                   <small style="color: grey">{{ field.help_text }}</small>
                 {% endif %}
                 {% for error in field.errors %}
-                  <p style="color: red">{{ error }}</p>
+                  <p style="color: #c41f31">{{ error }}</p>
                 {% endfor %}
-              </p>
             {% endfor %}
+            <button type="submit">Sign up</button>
+              </p>
+          </form>
           </div>
         </div>
       </div>
       {% comment %} refactor once route is set up {% endcomment %}
 
-  </div>
-{% comment %} <div class="container">
-
-  <h2>Sign up</h2>
-
-  <form method="post">
-    {% csrf_token %}
-    {% for field in form %}
-      <p class= "container_form">
-        {{ field.label_tag }}<br>
-        {{ field }}
-        {% if field.help_text %}
-          <small style="color: grey">{{ field.help_text }}</small>
-        {% endif %}
-        {% for error in field.errors %}
-          <p style="color: red">{{ error }}</p>
-        {% endfor %}
-      </p>
-    {% endfor %}
-    <button type="submit">Sign up</button>
-  </form>
-
-
-
-</div> {% endcomment %}
 {% endblock %}
