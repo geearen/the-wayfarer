@@ -40,7 +40,7 @@
 
     {% if user.is_authenticated %}
     <div class="nav_button_container button_user">
-      <a href="{% url 'profile_detail' user.pk%}" class="nav_button">{{user.username}}</a>
+      <a href="{% url 'profile_detail' user.profile.pk%}" class="nav_button">{{user.username}}</a>
     </div>
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
