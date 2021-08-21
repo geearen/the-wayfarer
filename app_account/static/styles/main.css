@@ -249,9 +249,23 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   margin: 30px;
 }
 
-.post_container {
+.post_detail_container {
   margin: auto;
-  width: 500px;
-  height: 750px;
-  background-color: navajowhite;
+  height: 500px;
+  width: 650px;
+  margin-top: 50px;
+  background-color: var(--nav);
+  border: 1px solid var(--secondary-text);
+  border-radius: 2px;
+  box-shadow: 5px 5px 5px 1px rgba(0, 255, 0, 0.2);
+  color: var(--text);
+}
+
+.post_detail_header {
+  display: flex;
+}
+
+.post_detail_header img {
+  border: 2px solid var(--text);
+  width: 75px;
 }

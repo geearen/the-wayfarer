@@ -12,22 +12,25 @@
 </div>
 </aside>
 {% endfor %} {% endcomment %}
-<div class="post_container">
-  {% for post in posts %}
+<div class="post_detail_container">
+
+  <div class="post_detail_header">
+    <img src="{{profile.image}}https://thegoldengirlblog.com/wp-content/uploads/2019/07/Ray-Bans-Reviews-4.jpg" alt="">
+    <h3>{{user.username}}</h3>
+    <i class="fas fa-bars"></i>
+  </div>
+  
   <p>{{post.title}}</p>
 
-  {% endfor %}
 
-  {% for profile in profiles %}
+
+  
   <p>{{profile.current_city}}</p>
 
-  {% endfor %}
 
 
-  {% for user in users %}
-  <p>{{user.username}}</p>
 
-  {% endfor %}
+
 
 </div>
 
