@@ -1,10 +1,29 @@
 {% extends 'base.html' %}
 {% block content %}
-  <h1>{{profile.user}}</h1>
-  <img src="{{profile.profile_img}}" alt="">
-  <h3>{{profile.current_city}}</h3>
+  <h1 class="user_name">{{profile.user}}</h1>
+  
+<div class="profile_all">
+  <div class="pic_container">
+    <img class='profile_pic' src="{{profile.profile_img}}" alt="">
+  </div>
+  <div class="button_city_container">
+  <h3 class="current_city">{{profile.current_city}}</h3>
   <a href="{% url 'profile_update' profile.user.pk %}">
-    <button>Update Profile</button>
+    <button class="update_button">Update Profile</button>
   </a>
+  </div>
+  <div class="profile_post_container">
+    {% for post in posts %}
+    <a href="{% url 'post_detail' post.pk %}">
+    <h4 class="profile_post">{{post.title}}</h4>
+    </a>
+    <p class="profile_post">{{post.tips}}</p>
+    {% empty %}
 
+    {% endfor %}
+
+    
+  </div>
+  
+</div>
 {% endblock %}
