@@ -137,6 +137,5 @@ STATIC_URL = '/static/'
 
 # STATICFILES_DIRS = (str(BASE_DIR.joinpath('static')),)
 
-LOGIN_REDIRECT_URL = '/' 
-""" fix later to say <int:pk> """
+LOGIN_REDIRECT_URL = '/accounts/profile/' 
 LOGOUT_REDIRECT_URL = '/'
