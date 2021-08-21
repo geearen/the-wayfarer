@@ -253,3 +253,46 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   height: 750px;
   background-color: navajowhite;
 }
+.pic_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: var(--button)
+}
+.button_city_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column
+}
+.profile_pic {
+  
+  width: 400px;
+  height: 400px;
+  border-radius: 15%;
+  border: 2px solid var(--cobalt);
+  
+}
+
+.user_name {
+  color: var(--button);
+}
+
+.current_city {
+  color: var(--cobalt);
+}
+
+.update_button {
+  background-color: var(--button)
+}
+
+.profile_post {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.post {
+  color: var(--button);
+}
