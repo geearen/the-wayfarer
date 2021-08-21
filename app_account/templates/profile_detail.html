@@ -12,7 +12,7 @@
   </div>
   <div class="button_city_container">
   <h3 class="current_city">{{profile.current_city}}</h3>
-  <a href="{% url 'profile_update' profile.pk %}">
+  <a href="{% url 'profile_update' profile.user.pk %}">
     <button class="update_button">Update Profile</button>
 
   </div>
