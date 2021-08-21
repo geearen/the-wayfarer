@@ -13,8 +13,6 @@
 body {
   font-family: 'Urbanist', sans-serif;
   background-color: var(--background);
-  padding: 0;
-  margin: 0;
 }
 
 nav {
@@ -33,7 +31,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . . box1 box2';
+  grid-template-areas: 'brand . . . . . login signup logout';
   row-gap: 10px;
   align-items: center;
 }
@@ -68,6 +66,10 @@ nav {
   color: var(--button);
 }
 
+.nav_user {
+  grid-area: user;
+}
+
 .nav_brand {
   grid-area: brand;
   display: flex;
@@ -90,19 +92,15 @@ nav {
 }
 
 .button_login {
-  grid-area: box1;
+  grid-area: login;
 }
 
 .button_signup {
-  grid-area: box2;
-}
-
-.button_user {
-  grid-area: box1;
+  grid-area: signup;
 }
 
 .button_logout {
-  grid-area: box2;
+  grid-area: logout;
 }
 
 /* MODAL for LOGIN and Sign up */
@@ -251,12 +249,6 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   margin: 30px;
 }
 
-.post_detail_container {
-  margin: auto;
-  width: 500px;
-  height: 750px;
-  background-color: navajowhite;
-}
 .pic_container {
   display: flex;
   align-items: center;
@@ -290,8 +282,6 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   background-color: var(--button)
 }
 
-
-
 .profile_post_container {
   height: 90vh;
   width: 30vw;
@@ -317,11 +307,61 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   color: var(--text);
 }
 
+.post_detail_container {
+  margin: auto;
+  height: 500px;
+  width: 650px;
+  margin-top: 50px;
+  background: radial-gradient(circle, #002c91, #021f4a);
+  /* border: 1px solid var(--nav); */
+  border-radius: 10px;
+  /* box-shadow: 2px 1px 2px 2px rgba(255, 255, 255, 0.1); */
+  box-shadow:
+  0 0 50px #fff,            /* outer white */
+  -10px 0 80px rgb(0, 123, 255),        /* outer left magenta */
+  10px 0 80px #0ff;         /* outer right cyan */
+  color: var(--text);
+  grid-template-columns: 25%, 25%, 25%, 25%;
+}
+
 .post_detail_header {
-  display: flex;
+  display: grid;
+  grid-column: 1 / 4;
+  grid-template-columns: repeat(8, 1fr);
+  background: var(--nav);
+  border-radius: 10px 10px 2px 2px;
 }
 
 .post_detail_header img {
-  border: 2px solid var(--text);
+  border: 1px solid var(--text);
   width: 75px;
+  border-radius: 2px;
+  grid-column: 1 / 2;
+  align-self: center;
+  margin: 20px;
+}
+
+.post_detail_header h3 {
+  grid-column: 2 / 5;
+  margin: 20px 5px;
+  font-size: 2em;
+}
+
+.post_detail_header i {
+  align-self: center;
+  grid-column: 8 / 9;
+}
+
+.post_detail_content {
+  margin: 20px;
+}
+
+.post_detail_content h6, span {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 700;
+}
+
+h6, span {
+  font-weight: 400;
 }

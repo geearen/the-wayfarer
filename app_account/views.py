@@ -84,7 +84,7 @@ class ProfileDetail(DetailView):
 #     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
 class ProfileUpdate(UpdateView):
-  model = User 
+  model = User
   fields = ['username', 'email']
   template_name = "profile_update.html"
   
