@@ -13,6 +13,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib.auth.views import LoginView
 from django.utils.decorators import method_decorator
 from .models import User, Profile
+from app_content.models import Post
 
 # Create your views here.
 
@@ -67,6 +68,13 @@ class ProfileDetail(DetailView):
   model = Profile
   template_name = "profile_detail.html"
 
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['posts'] = Post.objects.all()
+
+    return context
+
+
 # class UserUpdate(UpdateView):
 #   model =  User
 #   fields = [ 'username', 'email']
@@ -76,7 +84,7 @@ class ProfileDetail(DetailView):
 #     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
 class ProfileUpdate(UpdateView):
-  model = User 
+  model = User
   fields = ['username', 'email']
   template_name = "profile_update.html"
   
@@ -85,6 +93,7 @@ class ProfileUpdate(UpdateView):
   #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
   #   context["second_model"] = User.objects.get(pk=pk)
   #   return context
+  
 
   def get_success_url(self):
     return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
