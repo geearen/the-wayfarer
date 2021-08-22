@@ -1,10 +1,16 @@
 from django.shortcuts import render
 from django.views.generic.base import TemplateView
 from django.views.generic import DetailView
+from django.views.generic.edit import DeleteView, UpdateView
 from .models import City, Post, Profile, User
+from django.urls import reverse
 from app_account import views
-# Create your views here.
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.utils.decorators import method_decorator
 
+# Create your views here.
 
 class Home(TemplateView):
   model = City
@@ -27,3 +33,17 @@ class PostDetail(DetailView):
     context["posts"] = Post.objects.all()
     return context
     
+# @method_decorator(login_required, name='dispatch')
+class PostDelete(DeleteView):
+  model = Post
+  template_name = "post_delete_confirmation.html"
+  success_url = "/cities/"
+
+# @method_decorator(login_required, name='dispatch')
+class PostUpdate(UpdateView):
+  model = Post
+  fields = ['title', 'tips', 'post_image', 'city']
+  template_name = "post_update.html"
+
+  def get_success_url(self):
+      return reverse("city_detail", kwargs={'pk':self.object.pk})
