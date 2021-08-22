@@ -400,3 +400,12 @@ h6, span {
   align-self: center;
   margin: 20px;
 }
+
+/* .city_index_img {
+  height: 200px;
+  width: 300px;
+} */
+
+.container.city_index {
+  background-color: whitesmoke;
+}

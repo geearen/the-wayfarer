@@ -1,1 +1,39 @@
 {% extends 'base.html' %}
+
+{% block content %}
+<div class="container city_index">
+  <div class="row">
+
+
+
+    <div class="six columns city_section">
+      {% for city in cities %}
+      <div class="container city_card">
+        <div class="row">
+          <p class="three columns">{{city.city_name}}</p>
+          <p class="three columns">{{city.country}}</p>
+          <a href="{% url 'city_detail' city.pk %}">
+            <img class="three columns city_index_img" src="{{city.city_image}}" alt="city image">
+          </a>
+        </div>
+      </div>
+      {% empty %}
+      {% endfor %}
+    </div>
+    <div class="six columns post_section">
+      {% for post in posts %}
+      <div class="container post_card">
+        <div class="row">
+
+          <h3>{{post.title}}</h3>
+          <img src="{{post.post_image}}" alt="">
+          <p>{{post.tips}}</p>
+          <p>{{post.post_date}}</p>
+        </div>
+      </div>
+      {% empty %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endblock %}
