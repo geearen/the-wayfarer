@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Create Post{% endblock %}
+
+{% block content %}
+<div class="post_create_container">
+
+  <form action="" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input class="" type="submit" value="Submit" />
+  </form>
+  
+</div>
+
+{% endblock %}
