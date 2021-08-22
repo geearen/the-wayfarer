@@ -1,1 +1,40 @@
 {% extends 'base.html' %}
+
+{% block content %}
+
+<div class="containter cities_detail">
+  <div class="row">
+
+    <div class="six columns containter_cities">
+      <h1> Cities</h1>
+
+      <div class="container container_london">
+      <div class="row button">
+        <img class="three columns" src="{{city.city_image}}" alt="city_image">
+        <h4 class ="three columns">{{city.city_name}}</h4>
+      </div>
+      </div>
+
+      <div class="container_sydney">
+        <h1>Sydney</h1>
+        <h1>Image</h1>
+      </div>
+
+      <div class="container_sanfran">
+        <h1>San Fran</h1>
+        <h1>Image</h1>
+      </div>
+
+      <div class="container_seattle">
+        <h1>Seattle</h1>
+        <h1>Image</h1>
+      </div>
+    </div>
+
+    <div class="six columns container_posts">
+      <h1>Post Section Here</h1>
+    </div>
+  </div>
+
+</div>
+{% endblock  %}

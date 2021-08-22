@@ -400,3 +400,9 @@ h6, span {
   align-self: center;
   margin: 20px;
 }
+
+/* city detail css */
+
+.cities_detail{
+  background-color: whitesmoke;
+}
