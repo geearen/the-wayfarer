@@ -15,23 +15,17 @@
 <div class="post_detail_container">
 
   <div class="post_detail_header">
-    <img src="{{profile.image}}https://thegoldengirlblog.com/wp-content/uploads/2019/07/Ray-Bans-Reviews-4.jpg" alt="">
+    <img src="{{profile.image}}https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
     <h3>{{user.username}}</h3>
     <i class="fas fa-bars"></i>
   </div>
-  
-  <p>{{post.title}}</p>
 
+  <div class="post_detail_content">
+    <h6>{{post.city}}<span>{{post.post_date}}</span></h6>
+    <h3>{{post.title}}</h3>
 
-
-  
-  <p>{{profile.current_city}}</p>
-
-
-
-
-
-
+    <p>{{post.tips}}</p>
+  </div>
 </div>
 
 {% endblock %}

@@ -1,13 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>Update {{profile.user}}</h1>
-<form action="" method="post">
-  {% csrf_token %}
-  {{form.as_p}}
-  <input type="submit" value="Submit">
-  
+<div class="container_update">
 
-</form>
+  <div class="container_background"></div>
+  
+  <div class="container_form">
+
+    <div class= "update_header">
+      <h1>Update {{profile.user}}</h1>
+    </div>
+
+    <div class="update_form">
+      <form action="" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <input type="submit" value="Submit">
+      </form>
+    </div>
+
+  </div>
+</div>
 
 {% endblock %}
