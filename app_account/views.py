@@ -87,13 +87,12 @@ class ProfileUpdate(UpdateView):
   model = User
   fields = ['username', 'email']
   template_name = "profile_update.html"
-  
 
-  # def get_context_data(self, pk, **kwargs):
-  #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
-  #   context["second_model"] = User.objects.get(pk=pk)
+  # def get_context_data(self, **kwargs):
+  #   context = super().get_context_data(**kwargs)
+  #   context["profile"] = Profile.objects.all()
+  #   fields = ['current_city']
   #   return context
-  
 
   def get_success_url(self):
     return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
@@ -102,3 +101,12 @@ class LoginRedirect(View):
   
   def get(self, request):
     return redirect(f"/accounts/profile/{request.user.profile.pk}")
+
+
+class UserUpdate(UpdateView):
+  model = Profile
+  more_fields = ['current_city', 'profile_img']
+  template_name = "profile_update.html"
+
+  def get_success_url(self):
+    return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
