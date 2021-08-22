@@ -332,7 +332,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   -10px 0 80px rgb(0, 123, 255),        /* outer left magenta */
   10px 0 80px #0ff;         /* outer right cyan */
   color: var(--text);
-  grid-template-columns: 25%, 25%, 25%, 25%;
+  grid-template-columns: repeat(8, 1fr);
 }
 
 .post_detail_header {
@@ -365,6 +365,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_content {
   margin: 20px;
+  grid-column: 1 / 9;
 }
 
 .post_detail_content h6, span {
@@ -412,3 +413,4 @@ h6, span {
   align-self: center;
   margin: 20px;
 }
+

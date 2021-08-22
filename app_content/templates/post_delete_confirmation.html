@@ -1,0 +1,17 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<h1 class="title pt-5">Are you sure you want to Delete {{post.title}}?</h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div class="delete_button">
+    <!-- confirm artist delete -->
+    <input class="delete_confirm_button" type="submit" value="Confirm" />
+    <!-- Redirect back to detail on cancel -->
+    <a class="delete_cancel_button" href="{% url 'post_detail' post.pk %}">Cancel</a>
+  </div>
+</form>
+
+{% endblock %}

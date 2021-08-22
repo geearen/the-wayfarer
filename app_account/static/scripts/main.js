@@ -79,3 +79,7 @@ $(".modal-content").click(function (event){
 // document.querySelector('.modal-content').addEventListener('click', function(e){
 //   e.stopPropagation();
 // })
+
+
+// Dropdown Toggle
+$(".dropdown_container a").toggle(false)

@@ -58,7 +58,8 @@ class PostCreate(CreateView):
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
-  success_url = "/cities/"
+  # success_url = "/cities/"
+  success_url = "/"
 
 # @method_decorator(login_required, name='dispatch')
 class PostUpdate(UpdateView):
