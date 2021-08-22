@@ -5,13 +5,48 @@
 {% block content %}
 <div class="post_create_container">
 
-  <form action="" method="post">
+  <form method="post">
     {% csrf_token %}
-    {{form.as_p}}
+    {{p_form.as_p}}
+    {{c_form.as_p}}
 
     <input class="" type="submit" value="Submit" />
   </form>
-  
+  {% comment %} <form class="" action="" method="post">
+      {% csrf_token %}
+
+          <input
+            class="input"
+            type="text"
+            name="title"
+            placeholder="Title"
+            required
+          />
+        
+        
+          <input
+            class="input"
+            type="text"
+            name="tips"
+            placeholder="tips"
+            required
+          />
+
+          <input
+            class="input"
+            type="text"
+            name="city"
+            placeholder="city"
+            required
+          />
+        
+        <div class="control">
+          <input class="button is-primary" type="submit" value="Add Post" />
+        </div>
+      </div>
+    </form> {% endcomment %}
+
+
 </div>
 
 {% endblock %}
