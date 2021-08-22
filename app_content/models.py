@@ -20,6 +20,7 @@ class City(Model):
 class Post(Model):
   title = CharField(max_length=150)
   tips = TextField(max_length=10000)
+  post_image = CharField(blank=True,max_length=1000)
   post_date = DateTimeField(auto_now_add=True)
   profile = ForeignKey(Profile, on_delete=CASCADE, related_name="posts")
   city = ForeignKey(City, on_delete=CASCADE, related_name="posts")
