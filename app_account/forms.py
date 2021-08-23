@@ -17,12 +17,12 @@ class SignUpForm(UserCreationForm):
 class PostCreateForm(ModelForm):
   class Meta:
     model = Post
-    fields = ('title', 'tips')
+    fields = ('title', 'tips', 'post_image')
 
 class PostCityCreate(ModelForm):
   class Meta:
     model = City
-    fields = ('city_name',)
+    fields = ('city_name', )
 
 
 class UserUpdateForm(ModelForm):

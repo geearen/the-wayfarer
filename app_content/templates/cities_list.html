@@ -5,7 +5,6 @@
   <div class="row">
 
 
-
     <div class="six columns city_section">
       <h1 class="city_header_index">Cities</h1>
       {% for city in cities %}
@@ -21,6 +20,8 @@
       {% empty %}
       {% endfor %}
     </div>
+
+
     <div class="six columns post_section">
       <h1 class="post_header_index">Posts</h1>
       {% for post in posts %}
@@ -36,6 +37,8 @@
       {% empty %}
       {% endfor %}
     </div>
+
   </div>
 </div>
+
 {% endblock %}
