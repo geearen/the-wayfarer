@@ -33,7 +33,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . . box1 box2';
+  grid-template-areas: 'brand . . . . . box0 box1 box2';
   row-gap: 10px;
   align-items: center;
 }
@@ -88,6 +88,10 @@ nav {
   font-weight: 800;
   font-size: 2em;
   color: var(--text);
+}
+
+.button_city {
+  grid-area: box0;
 }
 
 .button_login {
