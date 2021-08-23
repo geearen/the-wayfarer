@@ -57,19 +57,6 @@ class CitiesList(TemplateView):
 class CityDetail(TemplateView):
   pass
 
-# class PostCreate(CreateView):
-#   model = Post
-#   profile = Profile.objects.get(pk=pk)
-#   fields = ['title', 'tips', 'city', 'profile']
-#   template_name = 'post_create.html'
-  
-#   def form_valid(self, form):
-#     form.instance.user = self.request.user
-#     return super(PostCreate, self).form_valid(form)
-
-#   def get_success_url(self):
-#     return reverse("post_detail", kwargs={'pk': self.object.pk})
-
 
 class PostCreate(View):
   def get(self, request, pk):
@@ -87,11 +74,7 @@ class PostCreate(View):
     city = City.objects.get(pk=pk)
     profile = self.request.user.profile
     post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city)
-    print(f'======= title: {title} =======')
-    print(f'======= tips: {tips} =======')
-    print(f'======= city: {city} =======')
-    print(f'======= profile: {profile} =======')
-    print(f'======= pk: {pk} =======')
+    
 
 
 
