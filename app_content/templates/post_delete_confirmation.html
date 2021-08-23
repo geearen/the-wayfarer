@@ -2,18 +2,28 @@
 
 {% block content %}
 
-<h2 class="post_delete">Are you sure you want to delete <strong>"{{post.title}}"</strong>?</h2>
 
-<form method="post">
-  {% csrf_token %}
-  <div class="delete_button">
-    <!-- confirm artist delete -->
-    <input class="delete_confirm_button" type="submit" value="Confirm" />
-    <!-- Redirect back to detail on cancel -->
-    <button>
-      <a class="delete_cancel_button" href="{% url 'post_detail' post.pk %}">Cancel</a>
-    </button>
+<div class="modal modal-open">
+  <div class="modal-inner">
+    <div class="modal-content">
+      <div class="modal-close-icon">
+        <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="modal-content-inner">
+
+        <h2 class="post_delete">Are you sure you want to delete <strong>"{{post.title}}"</strong>?</h2>
+
+      <div class="delete_button">
+        <form method="post">
+          {% csrf_token %}
+            <input class="delete_confirm_button" type="submit" value="delete" style="color: red"/>
+        </form>
+        <button class="delete_cancel">
+          <a class="delete_cancel_button" href="{% url 'post_detail' post.pk %}">Cancel</a>
+        </button>
+      </div>
+    </div>
   </div>
-</form>
+</div>
 
 {% endblock %}

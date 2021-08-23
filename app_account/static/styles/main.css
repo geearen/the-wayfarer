@@ -415,19 +415,33 @@ h6, span {
   align-self: center;
 }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
 .post_delete {
-  color: var(--text);
-  font
-=======
-=======
+  color: var(--nav);
+  font-size: 1.5em;
+  margin: 10px;
+}
+
+div.delete_button {
+  margin: 20px 10px -20px 10px;
+  display: flex;
+}
+
+.delete_cancel {
+  margin-left: 10px;
+}
+
+.delete_cancel_button {
+  text-decoration: none;
+  color: var(--cobalt);
+}
+
 /* city detail css */
-.city_post{
+.city_post {
   background-color: whitesmoke;
   min-height: 90vh;
-  padding:20px;
+  padding: 20px;
 }
+
 .city_card{
   padding: 5rem;
 }
@@ -456,10 +470,10 @@ h6, span {
   min-height:90vh;
 }
 .post_card{
-
+  background-color: navajowhite;
 }
 /* CSS for City Indexs */
->>>>>>> dev
+
 .three.columns.city_index_img {
   height: 20rem;
   width: 35rem;
@@ -473,7 +487,6 @@ h6, span {
   padding: 10px;
 }
 
-
 .city_header_index {
   padding-left: 80px;
 }
@@ -486,5 +499,4 @@ h6, span {
 .six.columns.post_section {
   background-color: var(--cobalt);
   color: var(--text);
->>>>>>> dev
 }
