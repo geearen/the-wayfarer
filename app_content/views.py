@@ -114,4 +114,4 @@ class PostUpdate(UpdateView):
   template_name = "post_update.html"
 
   def get_success_url(self):
-      return reverse("city_detail", kwargs={'pk':self.object.pk})
+      return reverse("post_detail", kwargs={'pk':self.object.pk})
