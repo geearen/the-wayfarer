@@ -44,12 +44,12 @@ class CityDetail(TemplateView):
 
 class PostCreate(CreateView):
   model = Post
-  fields = ['title', 'tips', 'city']
+  fields = ['title', 'tips', 'post_image']
   template_name = 'post_create.html'
 
-  def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super(PostCreate, self).form_valid(form)
+  # def form_valid(self, form):
+  #   form.instance.user = self.request.user
+  #   return super(PostCreate, self).form_valid(form)
 
   def get_success_url(self):
     return reverse("city_detail", kwargs={'pk': self.object.pk})

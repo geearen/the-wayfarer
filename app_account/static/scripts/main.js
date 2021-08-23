@@ -80,6 +80,3 @@ $(".modal-content").click(function (event){
 //   e.stopPropagation();
 // })
 
-
-// Dropdown Toggle
-$(".dropdown_container a").toggle(false)

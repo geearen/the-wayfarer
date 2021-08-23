@@ -15,11 +15,13 @@
 <div class="post_detail_container">
 
   <div class="post_detail_header">
-    <img src="{{profile.image}}https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+    <a href="{% url 'profile_detail' user.profile.pk %}">
+      <img src="{{profile.image}}https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+    </a>
     <h3>{{user.username}}</h3>
     <i id="dropdown_i" class="fas fa-ellipsis-h">
       <div class="dropdown_container">
-        <a href="">Edit</a>
+        <a href="{% url 'post_update' post.pk %}">Edit</a>
         <a href="{% url 'post_delete' post.pk %}">Delete</a>
       </div>
     </i>
