@@ -52,6 +52,13 @@ class CitiesList(TemplateView):
     context = super().get_context_data(**kwargs)
     context['cities'] = City.objects.all()
     context['posts'] = Post.objects.all()
+    # title_query = self.request.GET.get("title")
+    #   if title_query != None:
+    #     context['posts'] = Post.objects.filter(
+    #       title__icontains = title_query, profile=self.request.profile)
+    #   else:
+    #     content['posts'] = Post.objects.filter(profile=self.request.profile)
+
 
 
     return context

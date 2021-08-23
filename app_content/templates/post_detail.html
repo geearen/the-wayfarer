@@ -21,15 +21,15 @@
     <a class"post_detail_username" href="{% url 'profile_detail' user.profile.pk %}" style="text-decoration: none">
       <h3>{{user.username}}</h3>
     </a>
-    <button>
-      <i id="dropdown_i" class="fas fa-ellipsis-h">
-        <div class="dropdown_content">
+    <button onclick="myFunction()">
+      <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
+        <div id="dropdown_content" class="dropdown_content">
           <a href="{% url 'post_update' post.pk %}">Edit</a>
           <a href="{% url 'post_delete' post.pk %}">Delete</a>
         </div>
-      </i>
     </button>
   </div>
+
 
   <div class="post_detail_content">
     <h6>{{post.city}}<span>{{post.post_date}}</span></h6>
