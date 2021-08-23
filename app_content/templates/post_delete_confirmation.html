@@ -18,9 +18,8 @@
           {% csrf_token %}
             <input class="delete_confirm_button" type="submit" value="delete" style="color: red"/>
         </form>
-        <button class="delete_cancel">
-          <a class="delete_cancel_button" href="{% url 'post_detail' post.pk %}">Cancel</a>
-        </button>
+        <a class="delete_cancel_button" href="{% url 'post_detail' post.pk %}">
+        <button class="delete_cancel">Cancel</button></a>
       </div>
     </div>
   </div>

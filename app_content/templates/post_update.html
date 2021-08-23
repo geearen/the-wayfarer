@@ -2,16 +2,25 @@
 
 {% block content %}
 
+<div class="modal modal-open">
+  <div class="modal-inner">
+    <div class="modal-content">
+      <div class="modal-close-icon">
+        <a href="javascript:void(0)" class="close-modal"> <i class ="fa fa-times" aria-hidden="true"></i></a>
+      </div>
+      <div class="modal-content-inner">
 
-    <div class="update_form">
-      <form action="" method="POST">
-        {% csrf_token %}
-        {{form.as_p}}
-        <input type="submit" value="Submit">
+      <div class="update_form">
+        <form action="" method="POST">
+          {% csrf_token %}
+          {{form.as_p}}
+          <input type="submit" value="Submit">
 
-      </form>
+        </form>
+      </div>
+      </div>
     </div>
-
-
+  </div>
+</div>
 
 {% endblock %}
