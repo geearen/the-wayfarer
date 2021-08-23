@@ -1,40 +1,46 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} 
 {% block content %}
 
-<div class="containter cities_detail">
+
+<div class="city_post">
   <div class="row">
 
-    <div class="six columns containter_cities">
-      <h1> Cities</h1>
-
-      <div class="container container_london">
-      <div class="row button">
-        <img class="three columns" src="{{city.city_image}}" alt="city_image">
-        <h4 class ="three columns">{{city.city_name}}</h4>
+    <div class="six columns city_section_list">
+      <h1 class="city_header_index">Cities</h1>
+      
+      {% for city in cities %}
+      <div class="container city_card">
+        <div class="row">
+          <a href="{% url 'city_detail' city.pk %}">
+            <img
+              class="three columns city_index_img"
+              src="{{city.city_image}}"
+              alt="city_image"
+            />
+          </a>
+          <p class="two columns">{{city.city_name}}, {{city.country}}</p>
+        </div>
       </div>
-      </div>
-
-      <div class="container_sydney">
-        <h1>Sydney</h1>
-        <h1>Image</h1>
-      </div>
-
-      <div class="container_sanfran">
-        <h1>San Fran</h1>
-        <h1>Image</h1>
-      </div>
-
-      <div class="container_seattle">
-        <h1>Seattle</h1>
-        <h1>Image</h1>
-      </div>
+      {% empty %} {% endfor %}
     </div>
 
-    <div class="six columns container_posts">
-      <h1>Post Section Here</h1>
+
+    <div class="six columns post_section">
+      <h1 class="post_header_index">Posts</h1>
+      <p>{{city.city_name}}, {{city.country}}</p>
+
+      {% for post in city.posts.all %}
+      <div class="container post_card">
+        <div class="row">
+          <h3>{{city.post.title}}</h3>
+          <img src="{{post.post_image}}" alt="" />
+          <p>{{post.tips}}</p>
+          <p>{{post.post_date}}</p>
+        </div>
+      </div>
+      {% empty %} {% endfor %}
     </div>
+
   </div>
-
 </div>
-{% endblock  %}
+{% endblock %}

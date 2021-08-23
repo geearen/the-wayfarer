@@ -1,8 +1,10 @@
 from django.shortcuts import render
-from django.views.generic.base import TemplateView
+from django.views.generic.base import TemplateView, View
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.urls import reverse
 from django.views.generic import DetailView
+from django.views.generic.list import ListView
+
 from .models import City, Post, Profile, User
 from app_account import views
 
@@ -31,17 +33,34 @@ class PostDetail(DetailView):
     return context
     
 class CitiesList(TemplateView):
-  pass
+  template_name = 'cities_list.html'
 
-class CityDetail(DetailView):
-  model = City
-  template_name = "city_detail.html"
-  
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
-    context["posts"] = Post.objects.all()
+    context['cities'] = City.objects.all()
+    context['posts'] = Post.objects.all()
+
+
     return context
 
+  # def get_context_data(self, **kwargs):
+  #   context = super().get_context_data(**kwargs)
+  #   context['posts'] = Post.objects.all()
+
+    # return context
+    
+
+class CityDetail(DetailView):
+  model= City
+  template_name = "city_detail.html"
+    
+
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['cities'] = City.objects.all()
+    context['posts'] = Post.objects.all()
+    return context
+    
 
 class PostCreate(CreateView):
   model = Post

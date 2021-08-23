@@ -25,5 +25,8 @@ class Post(Model):
   profile = ForeignKey(Profile, on_delete=CASCADE, related_name="posts")
   city = ForeignKey(City, on_delete=CASCADE, related_name="posts")
   
+  class Meta:
+    ordering = ['-post_date']
+    
   def __str__(self):
       return self.title
