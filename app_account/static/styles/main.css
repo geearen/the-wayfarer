@@ -453,7 +453,11 @@ div.delete_button {
 }
 
 .city_card{
-  padding: 5rem;
+  margin: 2rem;
+  padding: 3rem;
+  background-color: #021531;
+  box-shadow: 3px 2px 5px var(--button);
+  
 }
 .city_card:hover{
   background-color: var(--button);
@@ -461,8 +465,12 @@ div.delete_button {
 .city_section_list{
   background-color: var(--hightlight);
   color: var(--text);
-  max-height: 100vh;
-  padding: 10px;
+  max-height: 120vh;
+  padding: 3rem;
+}
+.post_city_header{
+  display: flex;
+  flex-direction: column;
 }
 .city_header_selection{
   padding-left: 5rem;
@@ -491,35 +499,25 @@ div.delete_button {
   border-radius: 20px;
   border: 3px solid var(--button);
 }
-
-.post_wrapper{
-  overflow: hidden;
-  height: 100%;
-  position: relative;
-  z-index:1;
-  float: left;
+.post_card{
+  max-width: 100rem;
+}
+.post_row{
+  padding:2rem;
 }
 .post_content{
-  height:100%;
-  padding:0 32px 0 0;
-  position: relative;
-  right: -18px;
-  overflow: auto;
-  box-sizing: border-box;
-}
-.post_content_scroll{
-  position: relative;
-  width: 9px;
-  border-radius:4px;
-  top:0;
-  z-index:2;
-  cursor: pointer;
-  transition: opacity 0.25s linear;
-}
-.post_section:hover .post_content_scroll{
-  opacity: 1;
-}
+  padding:2rem;
 
+}
+.post_content_each{
+  background-color: var(--cobalt);
+  box-shadow: 3px 2px 5px var(--button);
+  margin: 2rem;
+  padding: 2rem;
+}
+.icon_plus{
+  align-items: flex-end;
+}
 
 
 /* CSS for City Indexs */
