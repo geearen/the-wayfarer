@@ -72,6 +72,7 @@ class ProfileDetail(DetailView):
   def get_context_data(self, **kwargs):
     context = super().get_context_data(**kwargs)
     context['posts'] = Post.objects.all()
+    
 
     return context
 
@@ -84,14 +85,37 @@ class ProfileDetail(DetailView):
 #   def get_success_url(self):
 #     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
-class ProfileUpdate(UpdateView):
+class ProfileUpdate(View):
 
-  model = User
-  fields = ['username', 'email']
-  template_name = "profile_update.html"
+  def get(self, request, pk):
+      u_form = UserUpdateForm()
+      p_form = ProfileUpdateForm()
+      context = {
+        "u_form":u_form,
+        "p_form":p_form
+      }
+      return render(request, "profile_update.html", context)
+  
+  def post(self, request, pk):
+    username = request.POST.get('username')
+    email = request.POST.get('email')
+    city = request.POST.get('current_city')
+    prof_id = self.request.user.profile.id
+    # print(f'======= title: {username} =======')
+    # print(f'======= tips: {email} =======')
+    # print(f'======= city: {city} =======')
+    # print(f'======= profile: {self.request.user.username} =======')
+    # # print(f'======= pk: {pk} =======')
+    User.objects.filter(username=self.request.user.username).update(username=username, email=email)
+    Profile.objects.filter(user=self.request.user.profile.user).update(current_city=city)
 
-  def get_success_url(self):
-    return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
+    return redirect('profile_detail', pk=prof_id)
+
+  # def get_success_url(self):
+  #   return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
+
+
+
 
 class LoginRedirect(View):
   

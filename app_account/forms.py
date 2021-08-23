@@ -28,10 +28,10 @@ class PostCityCreate(ModelForm):
 class UserUpdateForm(ModelForm):
   class Meta:
     model = User
-    fields = ['username', 'email']
+    fields = ('username', 'email', )
 
 class ProfileUpdateForm(ModelForm):
   class Meta:
     model = Profile
-    fields = ['current_city']
+    fields = ('current_city', )
 
