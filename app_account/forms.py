@@ -20,9 +20,8 @@ class PostCreateForm(ModelForm):
     fields = ('title', 'tips', 'post_image')
 
 class PostCityCreate(ModelForm):
-  class Meta:
-    model = City
-    fields = ('city_name', )
+  model = City
+  fields = ('city_name',)
 
 
 class UserUpdateForm(ModelForm):
