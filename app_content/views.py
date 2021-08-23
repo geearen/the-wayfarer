@@ -90,14 +90,10 @@ class PostCreate(View):
     title = request.POST.get('title')
     tips = request.POST.get('tips')
     post_image = request.POST.get('post_image')
-    city = City.objects.get(pk=pk)
+    city_pk = request.POST.get('city')
     profile = self.request.user.profile
-    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city, post_image=post_image)
-    # print(f'======= title: {title} =======')
-    # print(f'======= tips: {tips} =======')
-    # print(f'======= city: {city} =======')
-    # print(f'======= profile: {profile} =======')
-    # print(f'======= pk: {pk} =======')
+    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=City.objects.get(pk=city_pk), post_image=post_image)
+    
     return redirect('post_detail', pk=post_.id)
 
 # @method_decorator(login_required, name='dispatch')

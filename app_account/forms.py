@@ -1,6 +1,6 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
-from django.forms import ModelForm
+from django.forms import ModelForm, ChoiceField
 from django.contrib.auth.models import User
 from app_account.models import Profile
 from app_content.models import Post, City
@@ -19,10 +19,13 @@ class PostCreateForm(ModelForm):
     model = Post
     fields = ('title', 'tips', 'post_image')
 
+
 class PostCityCreate(ModelForm):
+  
+  city = forms.ModelChoiceField(queryset=City.objects.all())
   class Meta:
     model = City
-    fields = ('city_name', )
+    fields = ('city',)
 
 
 class UserUpdateForm(ModelForm):
