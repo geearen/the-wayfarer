@@ -123,6 +123,14 @@ class LoginRedirect(View):
     return redirect(f"/accounts/profile/{request.user.profile.pk}")
 
 
+class UserUpdate(UpdateView):
+  model = Profile
+  more_fields = ['current_city', 'profile_img']
+  template_name = "profile_update.html"
+
+  def get_success_url(self):
+    return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
+    
 # @login_required
 # def profile(self, request):
 #   if request.method == 'POST':

@@ -79,3 +79,4 @@ $(".modal-content").click(function (event){
 // document.querySelector('.modal-content').addEventListener('click', function(e){
 //   e.stopPropagation();
 // })
+
