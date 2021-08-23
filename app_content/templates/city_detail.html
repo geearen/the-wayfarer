@@ -3,15 +3,15 @@
 
 <form>
   <div>
-    <div>
+    <divn class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
     </div>
-    <div>
+    <div class="search_buttons">
       <input class="button" type="submit" value="Search" />
     </div>
   </div>
-  <!--  This anchor tag will redirect back to artist list without a query param -->
-  <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a>
+
+  {% comment %} <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a> {% endcomment %}
 </form>
 
 <div class="city_post">
