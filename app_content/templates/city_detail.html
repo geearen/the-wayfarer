@@ -43,7 +43,7 @@
       <div class="post_wrapper">
         <div class="post_content">
             <section class="row top_post">
-              <div class="three columns post_city_header">
+              <div class="eight columns post_city_header">
                 <h2>{{city.city_name}},</h2>
                 <h4>{{city.country}}</h4>
               </div>
@@ -52,29 +52,43 @@
               </div>
             </section>
             
-            <h1 class="post_header_index">Posts</h1>
+            <div class="row post_row">
+              <div class="nine columns">
+                <h1 class="post_header_index">Posts</h1>
+              </div>
+              <div class="three columns icon_plus">
+                <a href="{% url "post_create" city.pk%}">
+                  <i class="fas fa-plus-circle fa-2x"></i>
+                </a>
+              </div>
+            </div>
             {% for post in city.posts.all %}
             <div class="container post_card">
-                <div class="post_header">
-                  <h4>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h4>
-                </div>
-
+                  <div class="row post_content_each">
                   
                     
-                  <div class="row post_content">
-                      <div class="two columns">
+                      <div class="three columns">
                         <img src="{{post.post_image}}" alt="post_image" />
                       </div>
-                      <div class="six columns">
-                        <p>{{post.tips}}</p>
-                        <p>{{post.post_date}}</p>
+                      <div class="nine columns row">
+                        <div class="row">
+                        <div class="post_header eight columns">
+                          <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
+                        </div>
+                          <div class="post_date four columns">
+                            <p>{{post.post_date}}</p>
+                          </div>
+                        </div>
+                          <div class="post_tips eight columns">
+                            <p>{{post.tips}}</p>
+                          </div>
                       </div>
                   </div>
             </div>
             {% empty %} {% endfor %}
         </div>
       </div>
-        <div class="post_content_scroll"></div>
+
     </div>
 
   </div>
