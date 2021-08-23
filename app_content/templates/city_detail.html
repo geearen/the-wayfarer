@@ -1,6 +1,18 @@
 {% extends 'base.html' %} 
 {% block content %}
 
+<form>
+  <div>
+    <div>
+      <input class="input" type="text" name="title" placeholder="find a post..." />
+    </div>
+    <div>
+      <input class="button" type="submit" value="Search" />
+    </div>
+  </div>
+  <!--  This anchor tag will redirect back to artist list without a query param -->
+  <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a>
+</form>
 
 <div class="city_post">
   <div class="row">
