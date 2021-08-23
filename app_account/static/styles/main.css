@@ -369,6 +369,11 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   color: var(--text);
 }
 
+.dropdown_content a {
+  font-family: 'Urbanist';
+  text-decoration: none;
+}
+
 .post_detail_username h3{
   text-decoration: none;
 }
@@ -386,6 +391,12 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 h6, span {
   font-weight: 400;
+}
+
+.post_detail_content img {
+  word-wrap: inline;
+  width: 200px;
+  border-radius: 2px;
 }
 
 /* profile update CSS */
