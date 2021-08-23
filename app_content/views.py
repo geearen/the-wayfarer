@@ -8,6 +8,8 @@ from django.views.generic.edit import CreateView
 from .models import City, Post, Profile, User
 from app_account import views
 from app_account.forms import PostCreateForm, PostCityCreate
+from django.http import HttpResponseRedirect
+
 
 # Create your views here.
 
@@ -69,7 +71,7 @@ class PostCreate(View):
     tips = request.POST.get('tips')
     city = City.objects.get(pk=pk)
     profile = self.request.user.profile
-    Post.objects.create(title=title, tips=tips, profile=profile, city=city)
+    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city)
     print(f'======= title: {title} =======')
     print(f'======= tips: {tips} =======')
     print(f'======= city: {city} =======')
@@ -78,7 +80,7 @@ class PostCreate(View):
 
 
 
-    return reverse('city_detail', kwargs={'pk':pk})
+    return redirect('post_detail', pk=post_.id)
 
 # @method_decorator(login_required, name='dispatch')
 class PostDelete(DeleteView):
