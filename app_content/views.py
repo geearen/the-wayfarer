@@ -73,30 +73,6 @@ class CityDetail(DetailView):
     return context
     
 
-class PostCreate(CreateView):
-  model = Post
-  fields = ['title', 'tips', 'city']
-  template_name = 'post_create.html'
-
-  def form_valid(self, form):
-    form.instance.user = self.request.user
-    return super(PostCreate, self).form_valid(form)
-
-  def get_success_url(self):
-    return reverse("city_detail", kwargs={'pk': self.object.pk})
-# class PostCreate(CreateView):
-#   model = Post
-#   profile = Profile.objects.get(pk=pk)
-#   fields = ['title', 'tips', 'city', 'profile']
-#   template_name = 'post_create.html'
-  
-#   def form_valid(self, form):
-#     form.instance.user = self.request.user
-#     return super(PostCreate, self).form_valid(form)
-
-#   def get_success_url(self):
-#     return reverse("post_detail", kwargs={'pk': self.object.pk})
-
 
 class PostCreate(View):
   def get(self, request, pk):
@@ -111,17 +87,15 @@ class PostCreate(View):
   def post(self, request, pk):
     title = request.POST.get('title')
     tips = request.POST.get('tips')
+    post_image = request.POST.get('post_image')
     city = City.objects.get(pk=pk)
     profile = self.request.user.profile
-    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city)
-    print(f'======= title: {title} =======')
-    print(f'======= tips: {tips} =======')
-    print(f'======= city: {city} =======')
-    print(f'======= profile: {profile} =======')
-    print(f'======= pk: {pk} =======')
-
-
-
+    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city, post_image=post_image)
+    # print(f'======= title: {title} =======')
+    # print(f'======= tips: {tips} =======')
+    # print(f'======= city: {city} =======')
+    # print(f'======= profile: {profile} =======')
+    # print(f'======= pk: {pk} =======')
     return redirect('post_detail', pk=post_.id)
 
 # @method_decorator(login_required, name='dispatch')
