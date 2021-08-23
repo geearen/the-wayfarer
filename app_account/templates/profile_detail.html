@@ -15,7 +15,7 @@
   </a>
   </div>
   <div class="profile_post_container">
-    {% for post in posts %}
+    {% for post in profile.posts.all %}
     <a href="{% url 'post_detail' post.pk %}">
     <h4 class="profile_post">{{post.title}}</h4>
     </a>
