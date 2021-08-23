@@ -28,39 +28,41 @@
 
 
     <div class="eight columns post_section">
-
-      <section class="row top_post">
-        <div class="three columns post_city_header">
-          <h2>{{city.city_name}},</h2>
-          <h4>{{city.country}}</h4>
-        </div>
-        <div class="four columns city_image">
-          <img src="{{city.city_image}}" alt="city_image">
-        </div>
-      </section>
-      
-      <h1 class="post_header_index">Posts</h1>
-      {% for post in city.posts.all %}
-      <div class="container post_card">
-          <div class="post_header">
-            <h4>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h4>
-          </div>
-
+      <div class="post_wrapper">
+        <div class="post_content">
+            <section class="row top_post">
+              <div class="three columns post_city_header">
+                <h2>{{city.city_name}},</h2>
+                <h4>{{city.country}}</h4>
+              </div>
+              <div class="four columns city_image">
+                <img src="{{city.city_image}}" alt="city_image">
+              </div>
+            </section>
             
-              
-            <div class="row post_content">
-                <div class="two columns">
-                  <img src="{{post.post_image}}" alt="post_image" />
+            <h1 class="post_header_index">Posts</h1>
+            {% for post in city.posts.all %}
+            <div class="container post_card">
+                <div class="post_header">
+                  <h4>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h4>
                 </div>
-                <div class="six columns">
-                  <p>{{post.tips}}</p>
-                  <p>{{post.post_date}}</p>
-                </div>
+
+                  
+                    
+                  <div class="row post_content">
+                      <div class="two columns">
+                        <img src="{{post.post_image}}" alt="post_image" />
+                      </div>
+                      <div class="six columns">
+                        <p>{{post.tips}}</p>
+                        <p>{{post.post_date}}</p>
+                      </div>
+                  </div>
             </div>
-              
-              
+            {% empty %} {% endfor %}
+        </div>
       </div>
-      {% empty %} {% endfor %}
+        <div class="post_content_scroll"></div>
     </div>
 
   </div>
