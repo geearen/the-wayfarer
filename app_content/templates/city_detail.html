@@ -2,8 +2,8 @@
 {% block content %}
 
 <form>
-  <div>
-    <divn class="search_area">
+  <div class="">
+    <div class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
     </div>
     <div class="search_buttons">
@@ -73,7 +73,9 @@
                       <div class="nine columns row">
                         <div class="row">
                         <div class="post_header eight columns">
+                        <a href="{% url "post_detail" post.pk %}">
                           <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
+                        </a>
                         </div>
                           <div class="post_date four columns">
                             <p>{{post.post_date}}</p>
