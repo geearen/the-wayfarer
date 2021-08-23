@@ -353,14 +353,24 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 .post_detail_header h3 {
   grid-column: 2 / 5;
   align-self: center;
-  margin-top: 15px;
+  margin-top: 25px;
   font-size: 2em;
+  text-decoration: none;
 }
 
-.post_detail_header i {
+.post_detail_header button {
   align-self: center;
   grid-column: 8 / 9;
   margin-left: 30px;
+  border: none;
+}
+
+.post_detail_header i {
+  color: var(--text);
+}
+
+.post_detail_username h3{
+  text-decoration: none;
 }
 
 .post_detail_content {
@@ -469,9 +479,9 @@ div.delete_button {
   padding: 20px;
   min-height:90vh;
 }
-.post_card{
-  background-color: navajowhite;
-}
+
+
+
 /* CSS for City Indexs */
 
 .three.columns.city_index_img {
