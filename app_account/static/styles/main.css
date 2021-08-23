@@ -446,13 +446,8 @@ div.delete_button {
 }
 
 /* city detail css */
-<<<<<<< HEAD
 .city_post{
   background-color: var(--background);
-=======
-.city_post {
-  background-color: whitesmoke;
->>>>>>> dev
   min-height: 90vh;
   padding: 20px;
 }
@@ -466,7 +461,7 @@ div.delete_button {
 .city_section_list{
   background-color: var(--hightlight);
   color: var(--text);
-  min-height: 90vh;
+  max-height: 100vh;
   padding: 10px;
 }
 .city_header_selection{
@@ -482,7 +477,7 @@ div.delete_button {
   background-color: #021531;
   color: var(--text);
   padding: 20px;
-  max-height:90vh;
+  max-height:93.5vh;
   overflow: auto;
 }
 .post_section::-webkit-scrollbar{
