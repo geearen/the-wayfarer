@@ -90,6 +90,10 @@ nav {
   color: var(--text);
 }
 
+.button_city {
+  grid-area: box0;
+}
+
 .button_login {
   grid-area: box1;
 }
