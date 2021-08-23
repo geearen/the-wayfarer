@@ -293,17 +293,66 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   background-color: var(--button)
 }
 
-.profile_post_container {
+/* .profile_post_container {
   height: 90vh;
   width: 30vw;
+  background-color: var(--cobalt);
+  
+} */
+.profile_join {
+  font-size: 15px;
+  color: var(--secondary-text);
+  font-weight: 400;
+  letter-spacing: .5px;
+}
+
+.individual_post_container {
+  background-color: var(--nav);
+  border: 2px solid var(--button);
+  margin: 5px 0 5px 0;
+  border-radius: 20px;
+  width: 40rem;
+}
+
+.profile_post_date {
+  color: var(--text);
+  padding-left: 30px;
+}
+
+.profile_post_image {
+  width: 20rem;
+  height: 15rem;
+  margin-left: 30px;
+  border-radius: 20px;
+}
+
+.profile_post_title {
+  width: 250px;
+  background-color: var(--background);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+  margin: 30px;
+  color: var(--button);
+  transition: .2s linear;
+  border-radius: 20px;
+}
+
+.profile_post_title:hover {
+  transform: scale(1.2);
+  border-radius: 20px;
+  box-shadow:
+  0 0 50px #fff,            
+  -10px 0 80px rgb(0, 123, 255),        
+  10px 0 80px #0ff;  
+
 }
 
 .profile_post {
-  display: flex;
-  justify-content: flex-start;
-  flex-direction: column;
-  padding: 10px;
-  color: var(--button)
+  color: var(--text);
+  padding-left: 30px;
 }
 
 .post {
