@@ -1,3 +1,10 @@
+from django.shortcuts import render
+from django.views.generic.base import TemplateView, View
+from django.views.generic.edit import DeleteView, CreateView, UpdateView
+from django.urls import reverse
+from django.views.generic import DetailView
+from django.views.generic.list import ListView
+
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.views.generic.base import View, TemplateView
@@ -56,21 +63,17 @@ class CitiesList(TemplateView):
     # return context
     
 
-class CityDetail(TemplateView):
-  pass
+class CityDetail(DetailView):
+  model= City
+  template_name = "city_detail.html"
+    
 
-# class PostCreate(CreateView):
-#   model = Post
-#   profile = Profile.objects.get(pk=pk)
-#   fields = ['title', 'tips', 'city', 'profile']
-#   template_name = 'post_create.html'
-  
-#   def form_valid(self, form):
-#     form.instance.user = self.request.user
-#     return super(PostCreate, self).form_valid(form)
-
-#   def get_success_url(self):
-#     return reverse("post_detail", kwargs={'pk': self.object.pk})
+  def get_context_data(self, **kwargs):
+    context = super().get_context_data(**kwargs)
+    context['cities'] = City.objects.all()
+    context['posts'] = Post.objects.all()
+    return context
+    
 
 
 class PostCreate(View):
@@ -86,10 +89,15 @@ class PostCreate(View):
   def post(self, request, pk):
     title = request.POST.get('title')
     tips = request.POST.get('tips')
+    post_image = request.POST.get('post_image')
     city = City.objects.get(pk=pk)
     profile = self.request.user.profile
-    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city)
-
+    post_ = Post.objects.create(title=title, tips=tips, profile=profile, city=city, post_image=post_image)
+    # print(f'======= title: {title} =======')
+    # print(f'======= tips: {tips} =======')
+    # print(f'======= city: {city} =======')
+    # print(f'======= profile: {profile} =======')
+    # print(f'======= pk: {pk} =======')
     return redirect('post_detail', pk=post_.id)
 
 # @method_decorator(login_required, name='dispatch')
