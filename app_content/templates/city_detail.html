@@ -5,38 +5,60 @@
 <div class="city_post">
   <div class="row">
 
-    <div class="six columns city_section_list">
-      <h1 class="city_header_index">Cities</h1>
+    <div class="four columns city_section_list">
+      <h1 class="city_header_selection">Cities</h1>
       
       {% for city in cities %}
       <div class="container city_card">
         <div class="row">
           <a href="{% url 'city_detail' city.pk %}">
             <img
-              class="three columns city_index_img"
+              class="seven columns city_index_img"
               src="{{city.city_image}}"
               alt="city_image"
             />
           </a>
-          <p class="two columns">{{city.city_name}}, {{city.country}}</p>
+          <div class="five columns">
+            <h3 class= "city_name">{{city.city_name}}</h3>
+          </div>
         </div>
       </div>
       {% empty %} {% endfor %}
     </div>
 
 
-    <div class="six columns post_section">
-      <h1 class="post_header_index">Posts</h1>
-      <p>{{city.city_name}}, {{city.country}}</p>
+    <div class="eight columns post_section">
 
+      <section class="row top_post">
+        <div class="three columns post_city_header">
+          <h2>{{city.city_name}},</h2>
+          <h4>{{city.country}}</h4>
+        </div>
+        <div class="four columns city_image">
+          <img src="{{city.city_image}}" alt="city_image">
+        </div>
+      </section>
+      
+      <h1 class="post_header_index">Posts</h1>
       {% for post in city.posts.all %}
       <div class="container post_card">
-        <div class="row">
-          <h3>{{city.post.title}}</h3>
-          <img src="{{post.post_image}}" alt="" />
-          <p>{{post.tips}}</p>
-          <p>{{post.post_date}}</p>
-        </div>
+          <div class="post_header">
+            <h4>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h4>
+          </div>
+
+            
+              
+            <div class="row post_content">
+                <div class="two columns">
+                  <img src="{{post.post_image}}" alt="post_image" />
+                </div>
+                <div class="six columns">
+                  <p>{{post.tips}}</p>
+                  <p>{{post.post_date}}</p>
+                </div>
+            </div>
+              
+              
       </div>
       {% empty %} {% endfor %}
     </div>

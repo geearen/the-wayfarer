@@ -405,8 +405,36 @@ h6, span {
 /* city detail css */
 .city_post{
   background-color: whitesmoke;
+  min-height: 90vh;
+  padding:20px;
 }
-
+.city_card{
+  padding: 5rem;
+}
+.city_card:hover{
+  background-color: var(--button);
+}
+.city_section_list{
+  background-color: var(--hightlight);
+  color: var(--text);
+  min-height: 90vh;
+  padding: 10px;
+}
+.city_header_selection{
+  padding-left: 5rem;
+  font-family: 'Urbanist', sans-serif;
+  font-weight: 600;
+}
+.city_name{
+  text-align: center;
+  padding-top: 2rem;
+}
+.post_section{
+  background-color: var(--background);
+  color: var(--text);
+  padding: 20px;
+  min-height:90vh;
+}
 
 /* .city_index_img {
   height: 200px;
