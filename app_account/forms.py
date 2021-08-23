@@ -19,9 +19,13 @@ class PostCreateForm(ModelForm):
     model = Post
     fields = ('title', 'tips', 'post_image')
 
+
 class PostCityCreate(ModelForm):
-  model = City
-  fields = ('city_name',)
+  
+  city = forms.ModelChoiceField(queryset=City.objects.all())
+  class Meta:
+    model = City
+    fields = ('city',)
 
 
 class UserUpdateForm(ModelForm):
