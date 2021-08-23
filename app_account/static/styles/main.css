@@ -425,6 +425,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .show {
+  align-self: center;
   visibility: visible !important;
   position: absolute;
   z-index: 200;
