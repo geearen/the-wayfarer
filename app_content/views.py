@@ -11,15 +11,17 @@ from django.views.generic.base import View, TemplateView
 from django.views.generic.edit import DeleteView, CreateView, UpdateView
 from django.urls import reverse
 from django.views.generic import DetailView
-from django.views.generic.edit import CreateView
 from .models import City, Post, Profile, User
 from app_account import views
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import LoginView
+from django.utils.decorators import method_decorator
 from app_account.forms import PostCreateForm, PostCityCreate
 from django.http import HttpResponseRedirect
 
 
 # Create your views here.
-
 
 class Home(TemplateView):
   model = City
@@ -102,7 +104,11 @@ class PostCreate(View):
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
-  success_url = "/cities/"
+  # success_url = "/cities/"
+  def get_success_url(self):
+    prof_id = self.request.user.profile.id
+    return reverse("profile_detail", kwargs={'pk':prof_id})
+
 
 
 # @method_decorator(login_required, name='dispatch')
@@ -112,4 +118,4 @@ class PostUpdate(UpdateView):
   template_name = "post_update.html"
 
   def get_success_url(self):
-      return reverse("city_detail", kwargs={'pk': self.object.pk})
+      return reverse("post_detail", kwargs={'pk':self.object.pk})
