@@ -3,7 +3,6 @@
 
   <h1 class="user_name">{{profile.user}}</h1>
   
-  
 <div class="profile_all">
   <div class="pic_container">
     <img class='profile_pic' src="{{profile.profile_img}}" alt="">
@@ -16,11 +15,17 @@
   </a>
   </div>
   <div class="profile_post_container">
-    {% for post in posts %}
+    {% for post in profile.posts.all %}
+
+    <div class="individual_post_container">
+
     <a href="{% url 'post_detail' post.pk %}">
-    <h4 class="profile_post">{{post.title}}</h4>
+      <h4 class="profile_post_title">{{post.title}}</h4>
     </a>
+    <p class = "profile_post_date">{{post.post_date}}</p>
     <p class="profile_post">{{post.tips}}</p>
+    <img class="profile_post_image" src="{{post.post_image}}" alt="">
+    </div>
     {% empty %}
 
     {% endfor %}
