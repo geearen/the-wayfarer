@@ -8,6 +8,7 @@
   <form method="post">
     {% csrf_token %}
     {{p_form.as_p}}
+    {{c_form.as_p}}
 
     <input class="" type="submit" value="Submit" />
   </form>
