@@ -414,7 +414,35 @@ h6, span {
   margin: 20px;
 }
 
+<<<<<<< HEAD
 .post_delete {
   color: var(--text);
   font
+=======
+.three.columns.city_index_img {
+  height: 20rem;
+  width: 35rem;
+  margin: 10px;
+  border-radius: 5%;
+  box-shadow: 2px 2px 2px 1px var(--cobalt);
+} 
+
+.city_index {
+  background-color: var(--background);
+  padding: 10px;
+}
+
+.city_header_index {
+  padding-left: 80px;
+}
+
+.six.columns.city_section {
+  background-color: var(--nav);
+  color: whitesmoke;
+}
+
+.six.columns.post_section {
+  background-color: var(--cobalt);
+  color: var(--text);
+>>>>>>> dev
 }

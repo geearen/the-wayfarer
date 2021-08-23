@@ -1,6 +1,6 @@
 from os import name
 from django.urls import path
-from .views import Home, PostDetail, CitiesList, CityDetail, PostDelete, PostCreate, PostUpdate
+from .views import Home, PostDetail, CitiesList, CityDetail, PostDelete, PostUpdate, PostCreate
 from app_account import views
 
 urlpatterns = [
