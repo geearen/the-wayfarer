@@ -42,6 +42,11 @@
     <div class="nav_button_container button_user">
       <a href="{% url 'profile_detail' user.profile.pk%}" class="nav_button">{{user.username}}</a>
     </div>
+
+    <div class="nav_button_container button_cities">
+      <a class="nav_button" href="/cities/1/">Cities</a>
+    </div> 
+
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
     </div>
