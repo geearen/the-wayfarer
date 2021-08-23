@@ -33,7 +33,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . . box1 box2';
+  grid-template-areas: 'brand . . . . . box0 box1 box2';
   row-gap: 10px;
   align-items: center;
 }
@@ -88,6 +88,10 @@ nav {
   font-weight: 800;
   font-size: 2em;
   color: var(--text);
+}
+
+.button_city {
+  grid-area: box0;
 }
 
 .button_login {
@@ -290,15 +294,27 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .update_button {
-  background-color: var(--button)
+  background-color: var(--button);
+  transition: .2s linear;
+
 }
 
-/* .profile_post_container {
-  height: 90vh;
-  width: 30vw;
-  background-color: var(--cobalt);
+.update_button:hover {
+  transform: scale(1.2);
+  border-radius: 20px;
+  box-shadow:
+  0 0 50px #fff,            
+  -10px 0 80px rgb(0, 123, 255),        
+  10px 0 80px #0ff;  
+}
+
+.profile_post_container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  row-gap: 50px;
   
-} */
+}
 .profile_join {
   font-size: 15px;
   color: var(--secondary-text);
@@ -319,6 +335,13 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   padding-left: 30px;
 }
 
+.first_last_name {
+  color: var(--text);
+}
+
+.profile_email {
+  color: var(--text);
+}
 .profile_post_image {
   width: 20rem;
   height: 15rem;
