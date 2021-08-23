@@ -10,11 +10,21 @@
       <h1>Update {{profile.user}}</h1>
     </div>
 
-    <div class="update_form">
+    {% comment %} <div class="update_form">
       <form action="" method="post">
         {% csrf_token %}
-        {{form.as_p}}
+        {form.as_p}}
         <input type="submit" value="Submit">
+      </form>
+    </div> {% endcomment %}
+
+    <div class="update_form">
+      <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{u_form.as_p}}
+        {{p_form.as_p}}
+        <input type="submit" value="Submit">
+
       </form>
     </div>
 

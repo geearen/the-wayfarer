@@ -435,13 +435,34 @@ h6, span {
   padding: 20px;
   min-height:90vh;
 }
+.post_card{
 
-/* .city_index_img {
-  height: 200px;
-  width: 300px;
-} */
-
+}
 /* CSS for City Indexs */
+.three.columns.city_index_img {
+  height: 20rem;
+  width: 35rem;
+  margin: 10px;
+  border-radius: 5%;
+  box-shadow: 2px 2px 2px 1px var(--cobalt);
+} 
+
 .city_index {
-  background-color: whitesmoke;
+  background-color: var(--background);
+  padding: 10px;
+}
+
+
+.city_header_index {
+  padding-left: 80px;
+}
+
+.six.columns.city_section {
+  background-color: var(--nav);
+  color: whitesmoke;
+}
+
+.six.columns.post_section {
+  background-color: var(--cobalt);
+  color: var(--text);
 }

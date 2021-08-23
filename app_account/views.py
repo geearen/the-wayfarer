@@ -1,4 +1,5 @@
-from app_account.forms import SignUpForm
+from django.db.models.fields.related import ForeignKey
+from app_account.forms import SignUpForm, UserUpdateForm, ProfileUpdateForm
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.views import View
@@ -84,16 +85,10 @@ class ProfileDetail(DetailView):
 #     return reverse("profile_detail", kwargs={'pk': self.object.pk})
 
 class ProfileUpdate(UpdateView):
+
   model = User
   fields = ['username', 'email']
   template_name = "profile_update.html"
-  
-
-  # def get_context_data(self, pk, **kwargs):
-  #   context = super(ProfileUpdate, self).get_context_data(**kwargs)
-  #   context["second_model"] = User.objects.get(pk=pk)
-  #   return context
-  
 
   def get_success_url(self):
     return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
@@ -102,3 +97,22 @@ class LoginRedirect(View):
   
   def get(self, request):
     return redirect(f"/accounts/profile/{request.user.profile.pk}")
+
+
+# @login_required
+# def profile(self, request):
+#   if request.method == 'POST':
+#     print('===== its all happenin =====')
+#     p_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
+#     u_form = UserUpdateForm(request.POST, instance=request.user)
+#     if p_form.is_valid() and u_form.is_valid():
+#       u_form.save()
+#       p_form.save()
+      
+#       return reverse("profile_detail", kwargs={'pk': self.object.profile.pk})
+#     else:
+#       p_form = ProfileUpdateForm(instance=request.user)
+#       u_form = UserUpdateForm(instance=request.user.profile)
+
+#     context={'p_form': p_form, 'u_form': u_form}
+#     return render(request, 'accounts/profile/<int:pk>', context)
