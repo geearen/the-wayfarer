@@ -392,7 +392,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_container {
   margin: auto;
-  height: 500px;
+  height: 650px;
   width: 650px;
   margin-top: 75px;
   background: radial-gradient(circle, #002c91, #021f4a);
@@ -418,7 +418,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 .post_detail_header img {
   border: 1px solid var(--text);
   margin: 20px 20px;
-  width: 75px;
+  width: 10rem;
+  height:auto;
   border-radius: 2px;
 }
 
@@ -448,7 +449,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .show {
-  align-self: center;
+  left: 63%;
+  top:20%;
   visibility: visible !important;
   position: absolute;
   z-index: 200;

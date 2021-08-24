@@ -57,7 +57,7 @@
                 <h1 class="post_header_index">Posts</h1>
               </div>
               <div class="three columns icon_plus">
-                <a href="{% url "post_create" city.pk%}">
+                <a class ="open-modal" href="{% url 'post_create' city.pk %}">
                   <i class="fas fa-plus-circle fa-2x"></i>
                 </a>
               </div>
@@ -73,10 +73,24 @@
                       <div class="nine columns row">
                         <div class="row">
                         <div class="post_header eight columns">
-                          <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
+                          <a class ="five column" href="{%url "post_detail" post.pk%}">
+                            <h5>{{post.title}}  </h5>
+                          </a>
+                          <div class="three columns">
+                          </div>
                         </div>
                           <div class="post_date four columns">
+                            <p>posted by {{post.profile.user}}</p>
                             <p>{{post.post_date}}</p>
+
+                            {% comment %} <button onclick="myFunction()">
+                              <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
+                                <div id="dropdown_content" class="dropdown_content">
+                                  <a href="{% url 'post_update' post.pk %}">Edit</a>
+                                  <a href="{% url 'post_delete' post.pk %}">Delete</a>
+                                </div>
+                            </button> {% endcomment %}
+
                           </div>
                         </div>
                           <div class="post_tips eight columns">

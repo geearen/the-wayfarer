@@ -16,15 +16,16 @@
 
   <div class="post_detail_header">
     <a href="{% url 'profile_detail' user.profile.pk %}">
-      <img src="{{profile.image}}https://images.unsplash.com/photo-1529665253569-6d01c0eaf7b6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cHJvZmlsZXxlbnwwfHwwfHw%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="">
+      <img src="{{post.profile.profile_img}}" alt="profile_image">
     </a>
     <a class"post_detail_username" href="{% url 'profile_detail' user.profile.pk %}" style="text-decoration: none">
       <h3>{{user.username}}</h3>
     </a>
+
     <button onclick="myFunction()">
       <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
         <div id="dropdown_content" class="dropdown_content">
-          <a href="{% url 'post_update' post.pk %}">Edit</a>
+          <a class = "open-modal" href="{% url 'post_update' post.pk %}">Edit</a>
           <a href="{% url 'post_delete' post.pk %}">Delete</a>
         </div>
     </button>
@@ -34,8 +35,14 @@
   <div class="post_detail_content">
     <h6>{{post.city}}<span>{{post.post_date}}</span></h6>
     <h3>{{post.title}}</h3>
-    <img src="{{post.post_image}}" alt="">
-    <p>{{post.tips}}</p>
+    <section class="row">
+      <div class="five columns">
+        <img src="{{post.post_image}}" alt="post_image">
+      </div>
+      <div class="four columns">
+        <p>{{post.tips}}</p>
+      </div>
+    </section>
   </div>
 </div>
 
