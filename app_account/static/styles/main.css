@@ -33,7 +33,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . box0 box1 box2';
+  grid-template-areas: 'brand . . . . box0 box1 box2 box3';
   row-gap: 10px;
   align-items: center;
 }
@@ -107,6 +107,10 @@ nav {
 
 .button_logout {
   grid-area: box2;
+}
+
+.button_about {
+  grid-area: box3;
 }
 
 
@@ -191,7 +195,7 @@ nav {
   margin: auto;
 }
 
-.carousel_images, img{
+.carousel_images img{
   width: 100%;
 }
 
@@ -319,6 +323,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   align-items: center;
   justify-items: center;
 }
+
 .profile_join {
   font-size: 15px;
   color: var(--secondary-text);
@@ -401,17 +406,15 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_container {
   margin: auto;
-  height: 650px;
-  width: 650px;
+  /* height: 650px; */
+  max-width: 650px;
   margin-top: 75px;
   background: radial-gradient(circle, #002c91, #021f4a);
-  /* border: 1px solid var(--nav); */
   border-radius: 10px;
-  /* box-shadow: 2px 1px 2px 2px rgba(255, 255, 255, 0.1); */
   box-shadow:
   0 0 50px #fff,            /* outer white */
-  -10px 0 80px rgb(0, 123, 255),        /* outer left magenta */
-  10px 0 80px #0ff;         /* outer right cyan */
+  -10px 5px 10px rgb(0, 123, 255),        /* outer left magenta */
+  10px 5px 10px #0ff;         /* outer right cyan */
   color: var(--text);
   grid-template-columns: repeat(8, 1fr);
 }
@@ -440,11 +443,12 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   text-decoration: none;
 }
 
-.post_detail_header button {
+.post_detail_header i {
   align-self: center;
   grid-column: 8 / 9;
   margin-left: 30px;
   border: none;
+  position: sticky;
 }
 
 .post_detail_header i {
@@ -458,8 +462,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .show {
-  left: 63%;
-  top:20%;
+  /* left: 260px;
+  bottom: 300px; */
   visibility: visible !important;
   position: absolute;
   z-index: 200;
@@ -472,24 +476,29 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_content {
   margin: 20px;
-  grid-column: 1 / 9;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-.post_detail_content h6, span {
+.post_detail_content h6, .post_detail_content span {
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
-}
-
-h6, span {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .post_detail_content img {
   word-wrap: inline;
   width: 200px;
-  border-radius: 2px;
+  border-radius: 5px;
+  float: left;
+  margin-right: 20px;
+  text-align: justify;
 }
+
+.post_detail_content p {
+  margin:0 20px 10px 0;
+  text-align: justify;
+}
+
 
 /* profile update CSS */
 .container_update{
@@ -532,6 +541,7 @@ h6, span {
   color: var(--nav);
   font-size: 1.5em;
   margin: 10px;
+  background-color: (va);
 }
 
 div.delete_button {
@@ -545,7 +555,6 @@ div.delete_button {
 
 .delete_cancel_button {
   text-decoration: none;
-  color: var(--cobalt);
 }
 
 /* city detail css */
@@ -617,9 +626,13 @@ div.delete_button {
   box-shadow: 3px 2px 5px var(--button);
   margin: 2rem;
   padding: 2rem;
+  height: 250px;
 }
 .icon_plus{
   align-items: flex-end;
+}
+.post_image img{
+  width:300px;
 }
 
 
@@ -653,6 +666,7 @@ div.delete_button {
 }
 
 /* Scroll Bar CSS */
+
 body::-webkit-scrollbar{
   width: 12px;
 }
@@ -663,4 +677,205 @@ body::-webkit-scrollbar-thumb{
   background-color: var(--button);
   border-radius: 20px;
   border: 3px solid var(--button);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.meet_the_team {
+  color: var(--secondary-text);
+  margin-left: 20px;
+}
+
+.team_container {
+  display: grid;
+  grid-template-rows: repeat(4, 35vh);
+  grid-template-columns: 600px 1fr;
+  grid-template-areas: 
+  'exec exec-n'
+  'court court-n'
+  'jenny jenny-n'
+  'tev tev-n';
+  gap: 20px;
+}
+
+.team_member {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--text);
+  border-radius: 10px;
+  width: 600px;
+  margin-left: 20px;
+}
+
+.name_container {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 
+  'about-name about-name'
+  'git linkedin';
+  color: var(--secondary-text);
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_name {
+  grid-area: about-name;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.team_image {
+  width: auto;
+  height: auto;
+  border-radius: 10px 0 0 10px;
+}
+
+.team_info {
+  color: var(--text);
+  align-self: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.exec {
+  grid-area: exec;
+}
+
+.court {
+  grid-area: court;
+}
+
+.jenny {
+  grid-area: jenny;
+}
+
+.tev {
+  grid-area: tev;
+}
+
+.exec_name {
+  grid-area: exec-n;
+}
+
+.court_name {
+  grid-area: court-n;
+}
+
+.jenny_name {
+  grid-area: jenny-n;
+}
+
+.tev_name {
+  grid-area: tev-n;
+}
+
+.git {
+  grid-area: git;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.linkedin {
+  grid-area: linkedin;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.git-container {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.linkedin-container {
+  text-align: left;
+  margin-left: 20px;
+}
+
+.link_style {
+  text-decoration: none;
 }
