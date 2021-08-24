@@ -6,6 +6,7 @@ from django.views import View
 from django.views.generic import DetailView
 from django.views.generic.edit import CreateView, UpdateView, DeleteView
 from django.urls import reverse
+from django.views.generic.base import TemplateView
 
 
 from django.contrib.auth.forms import UserCreationForm
@@ -128,3 +129,6 @@ class UserUpdate(UpdateView):
 
 #     context={'p_form': p_form, 'u_form': u_form}
 #     return render(request, 'accounts/profile/<int:pk>', context)
+
+class About(TemplateView):
+  template_name="about.html"

@@ -48,14 +48,21 @@
     <div class="nav_button_container button_logout">
       <a class="nav_button" href="{% url 'logout' %}">Log Out</a>
     </div>
-    {% else%}
+    <div class="nav_button_container button_about">
+      <a class="nav_button" href="{% url 'about' %}">About</a>
+    </div>
+    {% else %}
     <div class="nav_button_container button_login">   
       <a class="nav_button open-modal" href="{% url 'login' %}">Log In</a>
     </div>
     <div class="nav_button_container button_signup">
       <a class="nav_button open-modal" href="{% url 'signup' %}">Sign Up</a>
     </div>
+    <div class="nav_button_container button_about">
+      <a class="nav_button" href="{% url 'about' %}">About</a>
+    </div>
     {% endif %}
+  </div>
 </nav>
 
 <body>
