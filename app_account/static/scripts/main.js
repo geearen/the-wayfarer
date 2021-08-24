@@ -87,7 +87,9 @@ $(".modal-content").click(function (event){
 
 function myFunction() {
   document.getElementById("dropdown_content").classList.toggle("show");
+  console.log('this works');
 }
+
 
 window.onclick = function(event) {
   if (!event.target.matches('.dropbtn')) {
@@ -102,4 +104,5 @@ window.onclick = function(event) {
   }
   event.stopPropagation();
 }
+
 
