@@ -85,7 +85,7 @@ class CityDetail(DetailView):
 
 
 class PostCreate(View):
-  def get(self, request, pk):
+  def get(self, request,pk):
     p_form = PostCreateForm()
     c_form = PostCityCreate()
     context = {

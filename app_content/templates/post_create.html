@@ -1,52 +1,37 @@
 {% extends 'base.html' %}
-
-{% block title %}Create Post{% endblock %}
+{% comment %} {% include 'city_detail.html' %} {% endcomment %}
+{% comment %} 
+{% block title %}Create Post{% endblock %} {% endcomment %}
 
 {% block content %}
-<div class="post_create_container">
 
-  <form method="post">
-    {% csrf_token %}
-    {{p_form.as_p}}
-    {{c_form.as_p}}
+<div class="modal modal-open">
+  <div class="modal-inner">
 
-    <input class="" type="submit" value="Submit" />
-  </form>
-  {% comment %} <form class="" action="" method="post">
-      {% csrf_token %}
-
-          <input
-            class="input"
-            type="text"
-            name="title"
-            placeholder="Title"
-            required
-          />
-        
-        
-          <input
-            class="input"
-            type="text"
-            name="tips"
-            placeholder="tips"
-            required
-          />
-
-          <input
-            class="input"
-            type="text"
-            name="city"
-            placeholder="city"
-            required
-          />
-        
-        <div class="control">
-          <input class="button is-primary" type="submit" value="Add Post" />
-        </div>
+    <div class="modal-content">
+      <div class="modal-close-icon">
+        <a href="javscript:void(0)" class="close-modal">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
       </div>
-    </form> {% endcomment %}
 
+      <div class="modal-content-inner">
+        <h4>Create a new post!</h4>
+      </div>
 
+      <hr class="modal-buttons-seperator">
+
+        <form method="post">
+          {% csrf_token %}
+          {{p_form.as_p}}
+          {{c_form.as_p}}
+
+          <input class="" type="submit" value="Submit" />
+        </form>
+
+    </div>
+  </div>
 </div>
+
 
 {% endblock %}
