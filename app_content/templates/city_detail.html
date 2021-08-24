@@ -2,8 +2,8 @@
 {% block content %}
 
 <form>
-  <div class="">
-    <div class="search_area">
+  <div>
+    <divn class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
     </div>
     <div class="search_buttons">
@@ -65,25 +65,17 @@
             {% for post in city.posts.all %}
             <div class="container post_card">
                   <div class="row post_content_each">
-                  
-                    
-                      <div class="three columns">
+                      <div class="three columns post_image" >
                         <img src="{{post.post_image}}" alt="post_image" />
                       </div>
                       <div class="nine columns row">
                         <div class="row">
                         <div class="post_header eight columns">
-<<<<<<< HEAD
-                        <a href="{% url "post_detail" post.pk %}">
-                          <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
-                        </a>
-=======
-                          <a class ="five column" href="{%url "post_detail" post.pk%}">
+                          <a class ="five columns" href="{%url "post_detail" post.pk%}">
                             <h5>{{post.title}}  </h5>
                           </a>
                           <div class="three columns">
                           </div>
->>>>>>> dev
                         </div>
                           <div class="post_date four columns">
                             <p>posted by {{post.profile.user}}</p>
