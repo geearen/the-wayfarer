@@ -275,7 +275,10 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   height: 400px;
   border-radius: 15%;
   border: 2px solid var(--cobalt);
-  box-shadow: 5px 5px 5px 1px var(--cobalt);
+  box-shadow:
+  0 0 10px #fff,            
+  -10px 0 10px rgb(0, 123, 255),        
+  10px 0 10px #0ff;
 }
 
 .user_name {
@@ -300,12 +303,12 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .update_button:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   border-radius: 20px;
   box-shadow:
-  0 0 50px #fff,            
-  -10px 0 80px rgb(0, 123, 255),        
-  10px 0 80px #0ff;  
+  0 0 5px #fff,            
+  -10px 0 10px rgb(0, 123, 255),        
+  10px 0 10px #0ff;  
 }
 
 .profile_post_container {
@@ -313,7 +316,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
   row-gap: 50px;
-  
+  align-items: center;
+  justify-items: center;
 }
 .profile_join {
   font-size: 15px;
@@ -364,12 +368,12 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .profile_post_title:hover {
-  transform: scale(1.2);
+  transform: scale(1.05);
   border-radius: 20px;
   box-shadow:
-  0 0 50px #fff,            
-  -10px 0 80px rgb(0, 123, 255),        
-  10px 0 80px #0ff;  
+  0 0 10px #fff,            
+  -10px 0 10px rgb(0, 123, 255),        
+  10px 0 10px #0ff;
 
 }
 
