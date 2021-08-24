@@ -84,7 +84,6 @@ class CityDetail(DetailView):
   
   
 
-
 class PostCreate(View):
   def get(self, request,pk):
     p_form = PostCreateForm()
@@ -109,11 +108,11 @@ class PostCreate(View):
 class PostDelete(DeleteView):
   model = Post
   template_name = "post_delete_confirmation.html"
+  
   # success_url = "/cities/"
   def get_success_url(self):
     prof_id = self.request.user.profile.id
     return reverse("profile_detail", kwargs={'pk':prof_id})
-
 
 
 # @method_decorator(login_required, name='dispatch')
