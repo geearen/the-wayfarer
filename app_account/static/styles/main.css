@@ -659,3 +659,200 @@ body::-webkit-scrollbar-thumb{
   border-radius: 20px;
   border: 3px solid var(--button);
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.meet_the_team {
+  color: var(--secondary-text);
+  margin-left: 20px;
+}
+
+.team_container {
+  display: grid;
+  grid-template-rows: repeat(4, 35vh);
+  grid-template-columns: 600px 1fr;
+  grid-template-areas: 
+  'exec exec-n'
+  'court court-n'
+  'jenny jenny-n'
+  'tev tev-n';
+  gap: 20px;
+}
+
+.team_member {
+  display: flex;
+  flex-direction: row;
+  border: 2px solid var(--text);
+  border-radius: 10px;
+  width: 600px;
+  margin-left: 20px;
+}
+
+.name_container {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  grid-template-columns: 50% 50%;
+  grid-template-areas: 
+  'about-name about-name'
+  'git linkedin';
+  color: var(--secondary-text);
+  font-size: 50px;
+  justify-content: center;
+  align-items: center;
+}
+
+.about_name {
+  grid-area: about-name;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.team_image {
+  width: auto;
+  height: auto;
+  border-radius: 10px 0 0 10px;
+}
+
+.team_info {
+  color: var(--text);
+  align-self: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.exec {
+  grid-area: exec;
+}
+
+.court {
+  grid-area: court;
+}
+
+.jenny {
+  grid-area: jenny;
+}
+
+.tev {
+  grid-area: tev;
+}
+
+.exec_name {
+  grid-area: exec-n;
+}
+
+.court_name {
+  grid-area: court-n;
+}
+
+.jenny_name {
+  grid-area: jenny-n;
+}
+
+.tev_name {
+  grid-area: tev-n;
+}
+
+.git {
+  grid-area: git;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.linkedin {
+  grid-area: linkedin;
+  margin: 0 auto;
+  font-size: 30px;
+}
+
+.git-container {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.linkedin-container {
+  text-align: left;
+  margin-left: 20px;
+}
