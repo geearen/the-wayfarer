@@ -65,15 +65,13 @@
             {% for post in city.posts.all %}
             <div class="container post_card">
                   <div class="row post_content_each">
-                  
-                    
-                      <div class="three columns">
+                      <div class="three columns post_image" >
                         <img src="{{post.post_image}}" alt="post_image" />
                       </div>
                       <div class="nine columns row">
                         <div class="row">
                         <div class="post_header eight columns">
-                          <a class ="five column" href="{%url "post_detail" post.pk%}">
+                          <a class ="five columns" href="{%url "post_detail" post.pk%}">
                             <h5>{{post.title}}  </h5>
                           </a>
                           <div class="three columns">
@@ -159,4 +157,8 @@
     </div>
   </div>
 </div>
+<<<<<<< HEAD
 {% endblock %}
+=======
+{% endblock %}
+>>>>>>> dev
