@@ -319,6 +319,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   align-items: center;
   justify-items: center;
 }
+
 .profile_join {
   font-size: 15px;
   color: var(--secondary-text);
@@ -617,6 +618,7 @@ div.delete_button {
   box-shadow: 3px 2px 5px var(--button);
   margin: 2rem;
   padding: 2rem;
+  height: 250px;
 }
 .icon_plus{
   align-items: flex-end;
