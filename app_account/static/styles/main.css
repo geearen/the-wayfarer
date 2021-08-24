@@ -33,7 +33,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(9, 11vw);
   grid-template-rows: 1;
-  grid-template-areas: 'brand . . . . . box0 box1 box2';
+  grid-template-areas: 'brand . . . . box0 box1 box2 box3';
   row-gap: 10px;
   align-items: center;
 }
@@ -107,6 +107,10 @@ nav {
 
 .button_logout {
   grid-area: box2;
+}
+
+.button_about {
+  grid-area: box3;
 }
 
 
@@ -858,12 +862,8 @@ body::-webkit-scrollbar-thumb{
 .linkedin-container {
   text-align: left;
   margin-left: 20px;
-.search_area {
-  margin: 10px;
-  display: flex;
 }
 
-.search_buttons {
-  display: flex;
-  margin: 10px;
+.link_style {
+  text-decoration: none;
 }
