@@ -434,7 +434,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   text-decoration: none;
 }
 
-.post_detail_header button {
+.post_detail_header i {
   align-self: center;
   grid-column: 8 / 9;
   margin-left: 30px;
@@ -453,8 +453,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .show {
-  left: 63%;
-  top:20%;
+  /* left: 260px;
+  bottom: 300px; */
   visibility: visible !important;
   position: absolute;
   z-index: 200;
@@ -546,7 +546,6 @@ div.delete_button {
 
 .delete_cancel_button {
   text-decoration: none;
-  color: var(--cobalt);
 }
 
 /* city detail css */
@@ -624,7 +623,7 @@ div.delete_button {
   align-items: flex-end;
 }
 .post_image img{
-  width: 20rem;
+  width:300px;
 }
 
 
