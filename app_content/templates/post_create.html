@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
-{% comment %} {% include 'city_detail.html' %} {% endcomment %}
-{% comment %} 
-{% block title %}Create Post{% endblock %} {% endcomment %}
+{% comment %} {% include 'city_detail.html'  %} {% endcomment %}
 
+
+{% block title %}Create Post{% endblock %} 
+{% comment %} {% extends 'city_detail.html' %} {% endcomment %}
 {% block content %}
 
 <div class="modal modal-open">
@@ -21,7 +22,7 @@
 
       <hr class="modal-buttons-seperator">
 
-        <form method="post">
+        <form method="post" >
           {% csrf_token %}
           {{p_form.as_p}}
           {{c_form.as_p}}

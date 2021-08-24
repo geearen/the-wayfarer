@@ -616,6 +616,9 @@ div.delete_button {
 .icon_plus{
   align-items: flex-end;
 }
+.post_image img{
+  width:300px;
+}
 
 
 /* CSS for City Indexs */

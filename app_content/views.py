@@ -81,7 +81,8 @@ class CityDetail(DetailView):
       context['posts'] = Post.objects.all()
 
     return context
-    
+  
+  
 
 class PostCreate(View):
   def get(self, request,pk):
