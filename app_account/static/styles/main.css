@@ -189,14 +189,10 @@ nav {
   max-width: 100%;
   position: relative;
   margin: auto;
-  /* overflow: hidden;
-  height: 550px; */
 }
 
 .carousel_images img{
   width: 100%;
-  /* position: absolute;
-  top: -250px; */
 }
 
 a.carousel_button_prev, a.carousel_button_next {
