@@ -27,11 +27,11 @@ const carouselImages = [
     alt: ""
   },
   {
-    src:"/static/assets/Carosel.png",
+    src:"/static/assets/Carosel_3.png",
     alt: ""
   },
   {
-    src:"/static/assets/Carosel.png",
+    src:"/static/assets/Carosel_4.png",
     alt: ""
   },
 ];
