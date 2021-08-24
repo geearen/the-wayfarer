@@ -396,17 +396,15 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_container {
   margin: auto;
-  height: 650px;
-  width: 650px;
+  /* height: 650px; */
+  max-width: 650px;
   margin-top: 75px;
   background: radial-gradient(circle, #002c91, #021f4a);
-  /* border: 1px solid var(--nav); */
   border-radius: 10px;
-  /* box-shadow: 2px 1px 2px 2px rgba(255, 255, 255, 0.1); */
   box-shadow:
   0 0 50px #fff,            /* outer white */
-  -10px 0 80px rgb(0, 123, 255),        /* outer left magenta */
-  10px 0 80px #0ff;         /* outer right cyan */
+  -10px 5px 10px rgb(0, 123, 255),        /* outer left magenta */
+  10px 5px 10px #0ff;         /* outer right cyan */
   color: var(--text);
   grid-template-columns: repeat(8, 1fr);
 }
@@ -428,7 +426,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .post_detail_header h3 {
-      grid-column: 2 / 5;
+  grid-column: 2 / 5;
   align-self: center;
   margin-top: 25px;
   font-size: 2em;
@@ -440,6 +438,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   grid-column: 8 / 9;
   margin-left: 30px;
   border: none;
+  position: sticky;
 }
 
 .post_detail_header i {
@@ -467,24 +466,29 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .post_detail_content {
   margin: 20px;
-  grid-column: 1 / 9;
+  grid-template-columns: repeat(1, 1fr);
 }
 
-.post_detail_content h6, span {
+.post_detail_content h6, .post_detail_content span {
   display: flex;
   justify-content: space-between;
-  font-weight: 700;
-}
-
-h6, span {
-  font-weight: 400;
+  font-weight: 500;
 }
 
 .post_detail_content img {
   word-wrap: inline;
   width: 200px;
-  border-radius: 2px;
+  border-radius: 5px;
+  float: left;
+  margin-right: 20px;
+  text-align: justify;
 }
+
+.post_detail_content p {
+  margin:0 20px 10px 0;
+  text-align: justify;
+}
+
 
 /* profile update CSS */
 .container_update{
@@ -527,6 +531,7 @@ h6, span {
   color: var(--nav);
   font-size: 1.5em;
   margin: 10px;
+  background-color: (va);
 }
 
 div.delete_button {
@@ -648,6 +653,7 @@ div.delete_button {
 }
 
 /* Scroll Bar CSS */
+
 body::-webkit-scrollbar{
   width: 12px;
 }

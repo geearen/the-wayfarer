@@ -2,8 +2,8 @@
 {% block content %}
 
 <form>
-  <div class="">
-    <div class="search_area">
+  <div>
+    <divn class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
     </div>
     <div class="search_buttons">
@@ -57,7 +57,7 @@
                 <h1 class="post_header_index">Posts</h1>
               </div>
               <div class="three columns icon_plus">
-                <a class ="open-modal" href="{% url 'post_create' city.pk %}">
+                <a class="open-modal" >
                   <i class="fas fa-plus-circle fa-2x"></i>
                 </a>
               </div>
@@ -73,17 +73,11 @@
                       <div class="nine columns row">
                         <div class="row">
                         <div class="post_header eight columns">
-<<<<<<< HEAD
-                        <a href="{% url "post_detail" post.pk %}">
-                          <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
-                        </a>
-=======
                           <a class ="five column" href="{%url "post_detail" post.pk%}">
                             <h5>{{post.title}}  </h5>
                           </a>
                           <div class="three columns">
                           </div>
->>>>>>> dev
                         </div>
                           <div class="post_date four columns">
                             <p>posted by {{post.profile.user}}</p>
@@ -111,6 +105,58 @@
 
     </div>
 
+  </div>
+</div>
+
+<div class="modal">
+  <div class="modal-inner">
+
+    <div class="modal-content">
+      <div class="modal-close-icon">
+        <a href="javscript:void(0)" class="close-modal">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="modal-content-inner">
+        <h4>Create a new post!</h4>
+      </div>
+
+      <hr class="modal-buttons-seperator">
+
+        <form method="post" action="{% url 'post_create' city.pk %}">
+          {% csrf_token %}
+          <p>
+            <label for="id_title">Title:</label> 
+            <input type="text" name="title" maxlength="150" required id="id_title">
+          </p>
+          <p>
+            <label for="id_tips">Tips:</label> 
+            <textarea name="tips" cols="40" rows="10" maxlength="10000" required id="id_tips"></textarea>
+          </p>
+          <p>
+          <label for="id_post_image">Post image:</label> 
+          <input type="text" name="post_image" maxlength="1000" id="id_post_image"></p>
+          <p><label for="id_city">City:</label> 
+          <select name="city" required id="id_city">
+            <option value="" selected>---------</option>
+            <option value="2">Sydney</option>
+            <option value="4">Seattle</option>
+            <option value="3">London</option>
+            <option value="1">San Franciso</option>
+
+          <input class="" type="submit" value="Submit" />
+          
+        </form> 
+        {% comment %} <form method="post" >
+          {% csrf_token %}
+          {{p_form.as_p}}
+          {{c_form.as_p}}
+
+          <input class="" type="submit" value="Submit" />
+        </form> {% endcomment %}
+
+    </div>
   </div>
 </div>
 {% endblock %}
