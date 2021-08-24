@@ -72,6 +72,12 @@ const altCarousel = function altCarousel() {
 
 setInterval(altCarousel, 4000);
 
+//Dropdown
+
+function myFunction() {
+  document.getElementById("dropdown_content").classList.toggle("show");
+}
+
 /* MODAL for Log In */
 const modal = document.querySelector('.modal');
 const closeButtons = document.querySelectorAll('.close-modal');
@@ -94,34 +100,5 @@ document.querySelector('.modal-inner').addEventListener('click', function(){
 $(".modal-content").click(function (event){
   event.stopPropagation();
 })
-
-
-// Dropdown Menu 
-
-
-// $("#dropdown_i").click(function(){
-//   $(".dropdown_content a").toggle("show")
-// });
-
-
-function myFunction() {
-  document.getElementById("dropdown_content").classList.toggle("show");
-  console.log('this works');
-}
-
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-  event.stopPropagation();
-}
 
 
