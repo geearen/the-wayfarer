@@ -284,7 +284,11 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   -10px 0 10px rgb(0, 123, 255),        
   10px 0 10px #0ff;
 }
-
+.container_user_name{
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
 .user_name {
   color: var(--button);
 }
@@ -353,7 +357,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 .profile_post_image {
   width: 20rem;
-  height: 15rem;
+  height: auto;
   margin-left: 30px;
   margin-bottom: 20px;
   border-radius: 20px;
