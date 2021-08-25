@@ -1,14 +1,15 @@
 {% extends 'base.html' %}
 {% block content %}
-
-  <h1 class="user_name">{{profile.user}}</h1>
+  <div class="container_user_name">
+    <h1 class="user_name">{{profile.user}}</h1>
+  </div>
   
 <div class="profile_all">
   <div class="pic_container">
     <img class='profile_pic' src="{{profile.profile_img}}" alt="">
   </div>
   <div class="button_city_container">
-  <h3 class="current_city">{{profile.current_city}}</h3>
+  <h3 class="current_city">Current City: {{profile.current_city}}</h3>
   <p class="first_last_name">{{user.first_name}} {{user.last_name}}</p>
   <p class="profile_email">{{user.email}}</p>
   <h3 class="profile_join"><strong>Member Since:</strong> {{user.date_joined}}</h3>
