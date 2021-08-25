@@ -1,7 +1,7 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<form>
+{% comment %} <form>
   <div>
     <divn class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
@@ -9,7 +9,13 @@
     <div class="search_buttons">
       <input class="button" type="submit" value="Search" />
     </div>
+<<<<<<< HEAD
   </div>
+=======
+  </div> {% endcomment %}
+
+  {% comment %} <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a> {% endcomment %}
+>>>>>>> dev
 </form>
 
 <div class="city_post">
@@ -61,18 +67,28 @@
                 </a>
               </div>
             </div>
+            <section class="all_post">
             {% for post in city.posts.all %}
             <div class="city_post_container">
-              <a class="link_style" href="{% url 'post_detail' post.pk %}"><h3>{{post.title}}</h3></a>
-              <h6><span>Posted by: {{post.profile.user}}<br>{{post.post_date}}</span></h6>
+              <a class="link_style" href="{% url 'post_detail' post.pk %}">
+                <h3>{{post.title}}</h3>
+              </a>
 
-    
-              <img src="{{post.post_image}}" alt="post_image">
-              <p class="post_tips_truncate city_tips">{{post.tips}}</p>
-              <button class="post_tips_button">read more</button> 
+              <h6>
+                <span>Posted by: {{post.profile.user}}<br>{{post.post_date}}
+                </span>
+              </h6>
+
+                  <img src="{{post.post_image}}" alt="post_image">
+                <div class="city_tips">
+                  <p class="post_tips_truncate">{{post.tips}}</p>
+                </div>
+                <a class="post_tips_button" href="{% url 'post_detail' post.pk %}">
+                  <button >read more</button> 
+                </a>
             </div>
             {% empty %} {% endfor %}
-          <br>
+            </section>
         </div>
       </div>
 
