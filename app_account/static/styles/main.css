@@ -319,6 +319,17 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   10px 0 10px #0ff;  
 }
 
+
+.update_profile_submit{
+  display: flex;
+  margin-bottom: -40px;
+}
+
+.update_profile_cancel {
+  display: flex;
+  margin-bottom: 30px;
+}
+
 .profile_post_container {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
@@ -539,7 +550,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   flex-direction: column;
   justify-content: center;
   max-width: 200rem;
-  max-height:40vh;
+  max-height:60vh;
   border-radius: 2px;
   align-self: center;
 }

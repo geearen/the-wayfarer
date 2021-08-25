@@ -1,6 +1,8 @@
 {% extends 'base.html' %} 
 {% block content %}
 
+{% block title %}Cities{% endblock %}
+
 {% comment %} <form>
   <div>
     <divn class="search_area">
@@ -9,10 +11,17 @@
     <div class="search_buttons">
       <input class="button" type="submit" value="Search" />
     </div>
+{% endcomment %}
+
+  {% comment %} <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a> {% endcomment %}
+
+{% comment %} </form> {% endcomment %}
+{% comment %} 
   </div>
 
   <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a>
-</form> {% endcomment %}
+</form>  {% endcomment %}
+
 
 <div class="city_post">
   <div class="row">
