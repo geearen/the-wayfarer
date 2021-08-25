@@ -64,41 +64,17 @@
               </div>
             </div>
             {% for post in city.posts.all %}
-            <div class="container post_card">
-                  <div class="row post_content_each">
-                      <div class="three columns post_image" >
-                        <img src="{{post.post_image}}" alt="post_image" />
-                      </div>
-                      <div class="eight columns row">
-                        <div class="row">
-                        <div class="post_header eight columns">
-                          <a class ="five columns" href="{%url "post_detail" post.pk%}">
-                            <h5>{{post.title}}  </h5>
-                          </a>
-                          <div class="three columns">
-                          </div>
-                        </div>
-                          <div class="post_date four columns">
-                            <p>posted by {{post.profile.user}}</p>
-                            <p>{{post.post_date}}</p>
+            <div class="city_post_container">
+              <a class="link_style" href="{% url 'post_detail' post.pk %}"><h3>{{post.title}}</h3></a>
+              <h6><span>Posted by: {{post.profile.user}}<br>{{post.post_date}}</span></h6>
 
-                            {% comment %} <button onclick="myFunction()">
-                              <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
-                                <div id="dropdown_content" class="dropdown_content">
-                                  <a href="{% url 'post_update' post.pk %}">Edit</a>
-                                  <a href="{% url 'post_delete' post.pk %}">Delete</a>
-                                </div>
-                            </button> {% endcomment %}
-
-                          </div>
-                        </div>
-                          <div class="post_tips eight columns">
-                            <p class="post_tips_truncate">{{post.tips}}</p>
-                          </div>
-                      </div>
-                  </div>
+    
+              <img src="{{post.post_image}}" alt="post_image">
+              <p class="post_tips_truncate city_tips">{{post.tips}}</p>
+              <button class="post_tips_button">read more</button> 
             </div>
             {% empty %} {% endfor %}
+          <br>
         </div>
       </div>
 
@@ -139,11 +115,11 @@
           <p><label for="id_city">City:</label> 
           <select name="city" required id="id_city">
             <option value="" selected>---------</option>
-            <option value="2">Sydney</option>
-            <option value="4">Seattle</option>
-            <option value="3">London</option>
-            <option value="1">San Franciso</option>
-
+            {% for city in cities %}
+            <option value="{{city.pk}}">{{city.city_name}}</option>
+            
+            {% empty %}
+            {% endfor %}
           <input class="" type="submit" value="Submit" />
           
         </form> 
