@@ -482,11 +482,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 .post_detail_content {
   margin: 20px;
   grid-template-columns: repeat(1, 1fr);
-<<<<<<< HEAD
-  min-height: 100%;
-=======
   min-height: 120%;
->>>>>>> dev
   overflow: auto;
 }
 
