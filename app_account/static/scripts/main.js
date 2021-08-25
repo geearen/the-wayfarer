@@ -102,3 +102,15 @@ $(".modal-content").click(function (event){
 })
 
 
+// Truncate
+
+$(".read_more").click(function(){
+  $(".post_tips p").removeClass("post_tips_truncate")
+  $(".read_more").text("read less")
+  $(".post_tips button").addClass("read_less")
+});
+
+$(".read_less button").click(function(){
+  $(".post_tips p").addClass("post_tips_truncate")
+  // $(".post_tips button").removeClass("read_less")
+});

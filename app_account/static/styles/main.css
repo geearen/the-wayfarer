@@ -621,13 +621,19 @@ div.delete_button {
   box-shadow: 3px 2px 5px var(--button);
   margin: 2rem;
   padding: 2rem;
-  height: 250px;
 }
 .icon_plus{
   align-items: flex-end;
 }
 .post_image img{
   width:300px;
+}
+
+.post_tips_truncate {
+  width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 
