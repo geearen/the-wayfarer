@@ -355,6 +355,7 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   width: 20rem;
   height: 15rem;
   margin-left: 30px;
+  margin-bottom: 20px;
   border-radius: 20px;
 }
 
@@ -384,6 +385,10 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 
 .profile_post {
   color: var(--text);
+  padding-left: 30px;
+}
+
+#profile_post_city {
   padding-left: 30px;
 }
 
@@ -420,6 +425,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   grid-template-columns: repeat(8, 1fr);
   background: var(--nav);
   border-radius: 10px 10px 2px 2px;
+  position: relative;
+  height: 8vh;
 }
 
 .post_detail_header img {
@@ -443,7 +450,6 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
   grid-column: 8 / 9;
   margin-left: 30px;
   border: none;
-  position: sticky;
 }
 
 .post_detail_header i {
@@ -457,10 +463,10 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 }
 
 .show {
-  /* left: 260px;
-  bottom: 300px; */
-  visibility: visible !important;
   position: absolute;
+  right:20px;
+  top: 60px;
+  visibility: visible !important;
   z-index: 200;
   color: var(--text);
 }

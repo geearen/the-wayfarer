@@ -24,9 +24,10 @@
     </a>
 
     {% comment %} <button > {% endcomment %}
+    
       <i onclick="myFunction()" id="dropdown_i" class="fas fa-ellipsis-h"></i>
         <div id="dropdown_content" class="dropdown_content">
-          <a class = "open-modal" href="{% url 'post_update' post.pk %}">Edit</a>
+          <a href="{% url 'post_update' post.pk %}">Edit</a>
           <a href="{% url 'post_delete' post.pk %}">Delete</a>
         </div>
     {% comment %} </button> {% endcomment %}
