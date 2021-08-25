@@ -102,3 +102,16 @@ $(".modal-content").click(function (event){
 })
 
 
+$(".post_tips_button").click(function(e){
+  if(!$(".post_tips_button").is("#read_less")){
+  $(".city_post_container p").removeClass("post_tips_truncate");
+  $(".post_tips_button").text("read less");
+  $(".post_tips_button").attr("id", "read_less");
+
+  }else {
+    $(".post_tips_button").text("read more");
+    $(".city_post_container p").addClass("post_tips_truncate");
+    $(".post_tips_button").removeAttr("read_less");
+  };
+  e.stopPropagation();
+});
