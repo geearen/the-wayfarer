@@ -472,6 +472,8 @@ a.carousel_button_prev:hover, a.carousel_button_next:hover {
 .post_detail_content {
   margin: 20px;
   grid-template-columns: repeat(1, 1fr);
+  min-height: 100%;
+  overflow: auto;
 }
 
 .post_detail_content h6, .post_detail_content span {
