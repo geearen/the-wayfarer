@@ -10,8 +10,6 @@
       <input class="button" type="submit" value="Search" />
     </div>
   </div>
-
-  {% comment %} <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a> {% endcomment %}
 </form>
 
 <div class="city_post">
@@ -82,19 +80,11 @@
                             <p>posted by {{post.profile.user}}</p>
                             <p>{{post.post_date}}</p>
 
-                            {% comment %} <button onclick="myFunction()">
-                              <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
-                                <div id="dropdown_content" class="dropdown_content">
-                                  <a href="{% url 'post_update' .ispost.pk %}">Edit</a>
-                                  <a href="{% url 'post_delete' post.pk %}">Delete</a>
-                                </div>
-                            </button> {% endcomment %}
-
                           </div>
                         </div>
                           <div class="post_tips eight columns">
                             <p class="post_tips_truncate">{{post.tips}}</p>
-                            <button class="post_tips_button">read more</button>
+                            <button onclick="readMore({{post.pk}})" class="post_tips_button" id="{{post.pk}}">read more</button>
                           </div>
                       </div>
                   </div>
