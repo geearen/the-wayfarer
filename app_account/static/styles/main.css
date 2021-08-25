@@ -645,6 +645,7 @@ div.delete_button {
   align-items: flex-end;
 }
 .post_image img{
+  margin: 10px;
   width:300px;
 }
 
