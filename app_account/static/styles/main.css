@@ -645,6 +645,7 @@ div.delete_button {
   padding:20px;
 }
 .post_image img{
+  margin: 10px;
   width:300px;
 }
 
