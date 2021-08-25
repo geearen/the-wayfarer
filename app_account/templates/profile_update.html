@@ -7,7 +7,7 @@
   
   <div class="container_form">
     <div class= "update_header">
-      <h1>Update {{profile.user}}</h1>
+      <h1>Update: {{user.profile}}</h1>
     </div>
 
     <div class="update_form">
@@ -15,9 +15,11 @@
         {% csrf_token %}
         {{u_form.as_p}}
         {{p_form.as_p}}
-        <input type="submit" value="Submit">
-
+      
+        <input class="update_profile_submit" type="submit" value="Submit">
       </form>
+        <a style="text-decoration: none" class="update_profile_cancel" href="{% url 'profile_detail' user.profile.pk %}">
+        <button class="new_delete_cancel" >Cancel</button></a>
     </div>
 
   </div>
