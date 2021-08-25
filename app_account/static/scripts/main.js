@@ -72,6 +72,12 @@ const altCarousel = function altCarousel() {
 
 setInterval(altCarousel, 4000);
 
+//Dropdown
+
+function myFunction() {
+  document.getElementById("dropdown_content").classList.toggle("show");
+}
+
 /* MODAL for Log In */
 const modal = document.querySelector('.modal');
 const closeButtons = document.querySelectorAll('.close-modal');
@@ -96,32 +102,16 @@ $(".modal-content").click(function (event){
 })
 
 
-// Dropdown Menu 
+// $(".post_tips_button").click(function(e){
+//   if(!$(".post_tips_button").is("#read_less")){
+//   $(".city_post_container p").removeClass("post_tips_truncate");
+//   $(".post_tips_button").text("read less");
+//   $(".post_tips_button").attr("id", "read_less");
 
-
-// $("#dropdown_i").click(function(){
-//   $(".dropdown_content a").toggle("show")
+//   }else {
+//     $(".post_tips_button").text("read more");
+//     $(".city_post_container p").addClass("post_tips_truncate");
+//     $(".post_tips_button").removeAttr("read_less");
+//   };
+//   e.stopPropagation();
 // });
-
-
-function myFunction() {
-  document.getElementById("dropdown_content").classList.toggle("show");
-  console.log('this works');
-}
-
-
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    let i;
-    for (i = 0; i < dropdowns.length; i++) {
-      let openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-  event.stopPropagation();
-}
-
-

@@ -12,7 +12,51 @@
 </div>
 </aside>
 {% endfor %} {% endcomment %}
+
 <div class="post_detail_container">
+
+  <div class="post_detail_header">
+    <a href="{% url 'profile_detail' user.profile.pk %}">
+      <img src="{{post.profile.profile_img}}" alt="profile_image">
+    </a>
+    <a class"post_detail_username" href="{% url 'profile_detail' user.profile.pk %}" style="text-decoration: none">
+      <h3>{{user.username}}</h3>
+    </a>
+
+    {% comment %} <button > {% endcomment %}
+    
+      <i onclick="myFunction()" id="dropdown_i" class="fas fa-ellipsis-h"></i>
+        <div id="dropdown_content" class="dropdown_content">
+          <a href="{% url 'post_update' post.pk %}">Edit</a>
+          <a href="{% url 'post_delete' post.pk %}">Delete</a>
+        </div>
+    {% comment %} </button> {% endcomment %}
+  </div>
+
+
+  <div class="post_detail_content">
+    <h6><a style="text-decoration:none" href="{% url 'city_detail' post.city.pk %}"><strong>{{post.city}}</a></strong><span>{{post.post_date}}</span></h6>
+    <h3>{{post.title}}</h3>
+    
+    <img src="{{post.post_image}}" alt="post_image">
+    <p>{{post.tips}}</p>
+
+  <br>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+{% comment %} <div class="post_detail_container">
 
   <div class="post_detail_header">
     <a href="{% url 'profile_detail' user.profile.pk %}">
@@ -29,21 +73,39 @@
           <a href="{% url 'post_delete' post.pk %}">Delete</a>
         </div>
     </button>
-  </div>
+  </div> {% endcomment %}
 
 
-  <div class="post_detail_content">
-    <h6>{{post.city}}<span>{{post.post_date}}</span></h6>
+  {% comment %} <div class="post_detail_content">
+    <h6><a style="text-decoration:none" href="{% url 'city_detail' post.city.pk %}"><strong>{{post.city}}</a></strong><span>{{post.post_date}}</span></h6>
+    <h3>{{post.title}}</h3>
+    
+    <img src="{{post.post_image}}" alt="post_image">
+    <p class="tips_short">{{post.tips}} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste porro soluta, nulla est possimus distinctio quisquam nobis, ipsa maiores excepturi nemo explicabo obcaecati. Assumenda quidem, nobis itaque facere odio magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+    
+    
+
+    <span id="tips_long"> Ipsa fugiat iusto in excepturi veritatis ipsam enim ratione quas. Facilis laudantium libero doloremque earum harum tempora perspiciatis nemo quidem, consequuntur deleniti. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste porro soluta, nulla est possimus distinctio quisquam nobis, ipsa maiores excepturi nemo explicabo obcaecati. Assumenda quidem, nobis itaque facere odio magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat iusto in excepturi veritatis ipsam enim ratione quas. Facilis laudantium libero doloremque earum harum tempora perspiciatis nemo quidem, consequuntur deleniti.</span>
+
+  <span id="tips_more">read more...</span>
+  </p>
+
+  <br>
+</div> {% endcomment %}
+
+
+  {% comment %} <div class="post_detail_content">
+    <h6><a style="text-decoration:none" href="{% url 'city_detail' post.city.pk %}"><strong>{{post.city}}</a></strong><span>{{post.post_date}}</span></h6>
     <h3>{{post.title}}</h3>
     <section class="row">
       <div class="five columns">
         <img src="{{post.post_image}}" alt="post_image">
       </div>
-      <div class="four columns">
-        <p>{{post.tips}}</p>
+      <div id="post_detail_content_tip" class="seven columns">
+        <p>{{post.tips}} Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste porro soluta, nulla est possimus distinctio quisquam nobis, ipsa maiores excepturi nemo explicabo obcaecati. Assumenda quidem, nobis itaque facere odio magnam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsa fugiat iusto in excepturi veritatis ipsam enim ratione quas. Facilis laudantium libero doloremque earum harum tempora perspiciatis nemo quidem, consequuntur deleniti.</p>
       </div>
     </section>
   </div>
-</div>
+</div> {% endcomment %}
 
 {% endblock %}

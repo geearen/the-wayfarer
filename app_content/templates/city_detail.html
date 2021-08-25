@@ -1,9 +1,9 @@
 {% extends 'base.html' %} 
 {% block content %}
 
-<form>
-  <div class="">
-    <div class="search_area">
+{% comment %} <form>
+  <div>
+    <divn class="search_area">
       <input class="input" type="text" name="title" placeholder="find a post..." />
     </div>
     <div class="search_buttons">
@@ -11,8 +11,8 @@
     </div>
   </div>
 
-  {% comment %} <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a> {% endcomment %}
-</form>
+  <a class="button is-dark" href="{% url 'city_detail' city.pk %}">Clear Search</a>
+</form> {% endcomment %}
 
 <div class="city_post">
   <div class="row">
@@ -42,8 +42,9 @@
     <div class="eight columns post_section">
       <div class="post_wrapper">
         <div class="post_content">
+
             <section class="row top_post">
-              <div class="eight columns post_city_header">
+              <div class="five columns post_city_header">
                 <h2>{{city.city_name}},</h2>
                 <h4>{{city.country}}</h4>
               </div>
@@ -57,60 +58,90 @@
                 <h1 class="post_header_index">Posts</h1>
               </div>
               <div class="three columns icon_plus">
-                <a class ="open-modal" href="{% url 'post_create' city.pk %}">
+                <a class="open-modal" >
                   <i class="fas fa-plus-circle fa-2x"></i>
                 </a>
               </div>
             </div>
+            <section class="all_post">
             {% for post in city.posts.all %}
-            <div class="container post_card">
-                  <div class="row post_content_each">
-                  
-                    
-                      <div class="three columns">
-                        <img src="{{post.post_image}}" alt="post_image" />
-                      </div>
-                      <div class="nine columns row">
-                        <div class="row">
-                        <div class="post_header eight columns">
-<<<<<<< HEAD
-                        <a href="{% url "post_detail" post.pk %}">
-                          <h5>{{post.title}} <span class ="post_author"> by {{post.profile.user}}</span> </h5>
-                        </a>
-=======
-                          <a class ="five column" href="{%url "post_detail" post.pk%}">
-                            <h5>{{post.title}}  </h5>
-                          </a>
-                          <div class="three columns">
-                          </div>
->>>>>>> dev
-                        </div>
-                          <div class="post_date four columns">
-                            <p>posted by {{post.profile.user}}</p>
-                            <p>{{post.post_date}}</p>
+            <div class="city_post_container">
+              <a class="link_style" href="{% url 'post_detail' post.pk %}">
+                <h3>{{post.title}}</h3>
+              </a>
 
-                            {% comment %} <button onclick="myFunction()">
-                              <i id="dropdown_i" class="fas fa-ellipsis-h"></i>
-                                <div id="dropdown_content" class="dropdown_content">
-                                  <a href="{% url 'post_update' post.pk %}">Edit</a>
-                                  <a href="{% url 'post_delete' post.pk %}">Delete</a>
-                                </div>
-                            </button> {% endcomment %}
+              <h6>
+                <span>Posted by: {{post.profile.user}}<br>{{post.post_date}}
+                </span>
+              </h6>
 
-                          </div>
-                        </div>
-                          <div class="post_tips eight columns">
-                            <p>{{post.tips}}</p>
-                          </div>
-                      </div>
-                  </div>
+                  <img src="{{post.post_image}}" alt="post_image">
+                <div class="city_tips">
+                  <p class="post_tips_truncate">{{post.tips}}</p>
+                </div>
+                <a class="post_tips_button" href="{% url 'post_detail' post.pk %}">
+                  <button >read more</button> 
+                </a>
             </div>
             {% empty %} {% endfor %}
+            </section>
         </div>
       </div>
 
     </div>
 
+  </div>
+</div>
+
+<div class="modal">
+  <div class="modal-inner">
+
+    <div class="modal-content">
+      <div class="modal-close-icon">
+        <a href="javscript:void(0)" class="close-modal">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+      </div>
+
+      <div class="modal-content-inner">
+        <h4>Create a new post!</h4>
+      </div>
+
+      <hr class="modal-buttons-seperator">
+
+        <form method="post" action="{% url 'post_create' city.pk %}">
+          {% csrf_token %}
+          <p>
+            <label for="id_title">Title:</label> 
+            <input type="text" name="title" maxlength="150" required id="id_title">
+          </p>
+          <p>
+            <label for="id_tips">Tips:</label> 
+            <textarea name="tips" cols="40" rows="10" maxlength="10000" required id="id_tips"></textarea>
+          </p>
+          <p>
+          <label for="id_post_image">Post image:</label> 
+          <input type="text" name="post_image" maxlength="1000" id="id_post_image"></p>
+          <p><label for="id_city">City:</label> 
+          <select name="city" required id="id_city">
+            <option value="" selected>---------</option>
+            {% for city in cities %}
+            <option value="{{city.pk}}">{{city.city_name}}</option>
+            
+            {% empty %}
+            {% endfor %}
+          <input class="" type="submit" value="Submit" />
+          
+        </form> 
+        {% comment %} <form method="post" >
+          {% csrf_token %}
+          {{p_form.as_p}}
+          {{c_form.as_p}}
+
+          <input class="" type="submit" value="Submit" />
+        </form> {% endcomment %}
+
+    </div>
   </div>
 </div>
 {% endblock %}
